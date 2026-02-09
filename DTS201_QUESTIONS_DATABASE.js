@@ -303,8 +303,7 @@ const DTS201_QUESTIONS = [
         options: ["Structured", "Semi-structured", "Unstructured", "Binary"],
         correct: 2,
         topic: "Data Types"
-    }
-];
+    },
 
     // DATA SOURCES AND GENERATION (15 questions)
     {
@@ -642,8 +641,7 @@ const DTS201_QUESTIONS = [
         options: ["Data isolation", "Decision making accuracy", "Data deletion", "Data encryption"],
         correct: 1,
         topic: "Data Integration"
-    }
-];
+    },
 
     // MACHINE LEARNING (25 questions)
     {
@@ -979,8 +977,7 @@ const DTS201_QUESTIONS = [
         options: ["Increase overfitting", "Reduce overfitting", "Delete data", "Encrypt data"],
         correct: 1,
         topic: "Classification"
-    }
-];
+    },
 
     // ARTIFICIAL NEURAL NETWORKS (15 questions)
     {
