@@ -8,7 +8,7 @@ A world-class, mobile-first exam simulator for DTS201 (Introduction to Data Scie
 
 ### 🎯 Core Functionality
 - **Student Registration**: Name and matric number input
-- **Random Question Selection**: 50 questions randomly selected from 200-question database
+- **Random Question Selection**: 50 questions randomly selected from 300+ question database
 - **Timed Exam**: 25-minute countdown timer with visual warnings
 - **Mobile-First Design**: Optimized for smartphones, tablets, and desktops
 - **Real-time Progress**: Visual progress bar and question counter
@@ -18,7 +18,7 @@ A world-class, mobile-first exam simulator for DTS201 (Introduction to Data Scie
 - **Answer Review**: Detailed correction with right/wrong answers
 - **Topic Breakdown**: Performance analysis by subject area
 
-### 📊 Question Database Coverage (200 Questions)
+### 📊 Question Database Coverage (300+ Questions)
 
 1. **Python Libraries** (20 questions)
    - NumPy, Pandas, Matplotlib, Scikit-learn
