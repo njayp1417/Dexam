@@ -611,3 +611,16 @@ body {
         padding: 8px 16px;
     }
 }
+.explanation {
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--primary-color);
+    padding: 10px;
+    margin: 10px 0;
+    font-style: italic;
+    color: #495057;
+}
+
+.review-item .explanation {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}

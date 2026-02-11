@@ -264,7 +264,8 @@ class ExamSystem {
                 userAnswer: userAnswer !== null ? question.options[userAnswer] : 'Not answered',
                 correctAnswer: question.options[question.correct],
                 isCorrect: isCorrect,
-                topic: question.topic
+                topic: question.topic,
+                explanation: question.explanation || 'No explanation available'
             });
         });
         
@@ -355,6 +356,9 @@ class ExamSystem {
                         <strong>Correct Answer:</strong> ${item.correctAnswer}
                     </div>
                 ` : ''}
+                <div class="explanation">
+                    <strong>Explanation:</strong> ${item.explanation}
+                </div>
                 <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 5px;">
                     <strong>Topic:</strong> ${item.topic}
                 </div>
