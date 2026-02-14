@@ -221,13 +221,6 @@ const COS201_QUESTIONS = [
         explanation: "continue skips the remaining code in current iteration and moves to next."
     },
     {
-        question: "Which is valid for loop syntax?",
-        options: ["for(;;)", "for[]", "for()", "for{}"],
-        correct: 0,
-        topic: "Loops",
-        explanation: "for(;;) creates an infinite loop with empty expressions."
-    },
-    {
         question: "The goto statement:",
         options: ["Is not supported in C", "Only works in functions", "Jumps to a label", "Is recommended"],
         correct: 2,
@@ -291,13 +284,6 @@ const COS201_QUESTIONS = [
         explanation: "inline suggests the compiler to expand function code at call site for speed."
     },
     {
-        question: "How do you access the third element of array arr?",
-        options: ["arr[3]", "arr[2]", "arr(2)", "arr{2}"],
-        correct: 1,
-        topic: "Arrays",
-        explanation: "Arrays are zero-indexed, so third element is at index 2."
-    },
-    {
         question: "What is the null character in C?",
         options: ["\n", "\0", "0", "NULL"],
         correct: 1,
@@ -338,6 +324,76 @@ const COS201_QUESTIONS = [
         correct: 2,
         topic: "Arrays",
         explanation: "strcpy() copies one string to another."
+    },
+    {
+        question: "Who developed the C programming language?",
+        options: ["Dennis Ritchie", "James Gosling", "Ken Thompson", "Bjarne Stroustrup"],
+        correct: 0,
+        topic: "Introduction to C",
+        explanation: "Dennis Ritchie developed C at Bell Labs in 1972."
+    },
+    {
+        question: "Which function is the entry point of a C program?",
+        options: ["main()", "program()", "init()", "start()"],
+        correct: 0,
+        topic: "C Program Structure",
+        explanation: "Every C program execution begins at the main() function."
+    },
+    {
+        question: "Which header file is required for printf()?",
+        options: ["stdio.h", "math.h", "conio.h", "stdlib.h"],
+        correct: 0,
+        topic: "C Program Structure",
+        explanation: "stdio.h provides standard input/output functions like printf() and scanf()."
+    },
+    {
+        question: "Which data type stores integer values?",
+        options: ["int", "float", "double", "char"],
+        correct: 0,
+        topic: "Data Types",
+        explanation: "int is the data type for storing integer values in C."
+    },
+    {
+        question: "What symbol is used for single-line comments?",
+        options: ["**", "//", "#", "/* */"],
+        correct: 1,
+        topic: "C Syntax",
+        explanation: "// is used for single-line comments in C99 and later."
+    },
+    {
+        question: "Which loop executes at least once?",
+        options: ["for", "if", "while", "do-while"],
+        correct: 3,
+        topic: "Loops",
+        explanation: "do-while loop checks condition after execution, guaranteeing at least one iteration."
+    },
+    {
+        question: "What is the correct format specifier for int?",
+        options: ["%c", "%s", "%d", "%f"],
+        correct: 2,
+        topic: "Input/Output",
+        explanation: "%d is the format specifier for integer values in printf() and scanf()."
+    },
+    {
+        question: "Which operator is used for multiplication?",
+        options: ["%", "*", "#", "x"],
+        correct: 1,
+        topic: "Operators",
+        explanation: "The asterisk (*) is the multiplication operator in C."
+    },
+    {
+        question: "Which symbol is used for assignment?",
+        options: ["=>", ":=", "==", "="],
+        correct: 3,
+        topic: "Operators",
+        explanation: "Single equals (=) is the assignment operator; double equals (==) is for comparison."
+    },
+    {
+        question: "Which keyword is used to exit a loop?",
+        options: ["exit", "stop", "return", "break"],
+        correct: 3,
+        topic: "Control Flow",
+        explanation: "break statement immediately exits the current loop."
     }
 ];
 
