@@ -9,6 +9,7 @@ class ExamSystem {
         this.timerInterval = null;
         this.startTime = null;
         this.selectedCourse = null;
+        this.selectedTopic = null;
         this.courseData = {
             'DTS201': {
                 title: 'DTS201',
@@ -57,6 +58,9 @@ class ExamSystem {
         document.getElementById('nextBtn').addEventListener('click', () => this.nextQuestion());
         document.getElementById('submitBtn').addEventListener('click', () => this.confirmSubmit());
         document.getElementById('retakeBtn').addEventListener('click', () => this.retakeExam());
+        document.getElementById('backToCourseBtn').addEventListener('click', () => this.showScreen('courseSelectionScreen'));
+        document.getElementById('backToTopicsBtn').addEventListener('click', () => this.showTopicSelection());
+        document.getElementById('startPracticeBtn').addEventListener('click', () => this.startTopicPractice());
     }
     
     selectCourse(courseCode) {
@@ -66,12 +70,86 @@ class ExamSystem {
         document.getElementById('courseTitle').textContent = course.title;
         document.getElementById('courseSubtitle').textContent = course.subtitle;
         
-        // For study mode, skip registration and go directly to study
+        // For study mode, show topic selection
         if (course.isStudyMode) {
-            this.startStudyMode();
+            this.showTopicSelection();
         } else {
             this.showScreen('registrationScreen');
         }
+    }
+    
+    showTopicSelection() {
+        this.showScreen('topicSelectionScreen');
+        this.loadTopics();
+    }
+    
+    loadTopics() {
+        const grid = document.getElementById('topicsGrid');
+        grid.innerHTML = '';
+        
+        if (typeof MAT201_TOPICS === 'undefined') {
+            grid.innerHTML = '<p>Topics not loaded</p>';
+            return;
+        }
+        
+        MAT201_TOPICS.forEach(topic => {
+            const card = document.createElement('div');
+            card.className = 'topic-card';
+            card.innerHTML = `
+                <span class="topic-icon">${topic.icon}</span>
+                <h3>${topic.name}</h3>
+                <p>${topic.examples.length} example questions</p>
+            `;
+            card.addEventListener('click', () => this.showTopicExplanation(topic));
+            grid.appendChild(card);
+        });
+    }
+    
+    showTopicExplanation(topic) {
+        this.selectedTopic = topic;
+        this.showScreen('topicExplanationScreen');
+        
+        const content = document.getElementById('topicExplanationContent');
+        content.innerHTML = `
+            <h2 style="color: var(--primary-color); margin-bottom: 20px;">
+                ${topic.icon} ${topic.name}
+            </h2>
+            ${topic.explanation}
+            <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                <h4 style="margin-top: 0;">📝 Practice Questions Available</h4>
+                <p>This topic has <strong>${topic.examples.length} example questions</strong> from past exams.</p>
+                <p>Click "Start Practice Questions" below to see these questions with detailed solutions.</p>
+            </div>
+        `;
+    }
+    
+    startTopicPractice() {
+        if (!this.selectedTopic) return;
+        
+        const allQuestions = this.courseData[this.selectedCourse].questions;
+        
+        // Filter questions by the example question numbers for this topic
+        this.examQuestions = this.selectedTopic.examples
+            .map(qNum => allQuestions.find(q => q.id === qNum))
+            .filter(q => q !== undefined);
+        
+        if (this.examQuestions.length === 0) {
+            alert('No questions available for this topic yet.');
+            return;
+        }
+        
+        this.currentQuestionIndex = 0;
+        this.userAnswers = new Array(this.examQuestions.length).fill(null);
+        
+        this.showScreen('examScreen');
+        document.getElementById('displayName').textContent = this.selectedTopic.name;
+        document.getElementById('displayMatric').textContent = 'Study Mode';
+        document.querySelector('.timer-container').style.display = 'none';
+        document.getElementById('submitBtn').textContent = 'Back to Topics';
+        document.getElementById('submitBtn').onclick = () => this.showTopicSelection();
+        
+        this.displayQuestion();
+        this.createQuestionGrid();
     }
     
     startExam() {
@@ -162,16 +240,18 @@ class ExamSystem {
         question.options.forEach((option, index) => {
             const optionDiv = document.createElement('div');
             optionDiv.className = 'option';
-            optionDiv.textContent = option;
             
-            if (this.userAnswers[this.currentQuestionIndex] === index) {
-                optionDiv.classList.add('selected');
-            }
-            
-            // In study mode, show correct answer
+            // In study mode, always highlight correct answer
             if (isStudyMode && index === question.correct) {
                 optionDiv.classList.add('correct-answer');
-                optionDiv.textContent = '✓ ' + option;
+                optionDiv.innerHTML = '<span style="font-weight: bold; color: #fff;">✓ CORRECT:</span> ' + option;
+            } else {
+                optionDiv.textContent = option;
+            }
+            
+            // Show user's selection (if any)
+            if (this.userAnswers[this.currentQuestionIndex] === index) {
+                optionDiv.classList.add('selected');
             }
             
             optionDiv.addEventListener('click', () => this.selectOption(index));
@@ -179,12 +259,12 @@ class ExamSystem {
         });
         
         // Show explanation in study mode
-        if (isStudyMode) {
+        if (isStudyMode && question.explanation) {
             const explanationDiv = document.createElement('div');
             explanationDiv.className = 'explanation-box';
             explanationDiv.innerHTML = `
-                <h4>Solution:</h4>
-                <p>${question.explanation || 'No explanation available.'}</p>
+                <h4>📖 How to Solve:</h4>
+                <div style="line-height: 1.8;">${question.explanation}</div>
             `;
             optionsContainer.appendChild(explanationDiv);
         }

@@ -56,6 +56,39 @@
         </div>
     </div>
 
+    <!-- Topic Selection Screen (for MAT201 Study Mode) -->
+    <div id="topicSelectionScreen" class="screen">
+        <div class="container">
+            <div class="header">
+                <h1>MAT201 Study Mode</h1>
+                <p class="subtitle">Select a Topic to Learn</p>
+                <p class="course-info">Choose a topic to see explanation and examples</p>
+            </div>
+            
+            <div class="topics-grid" id="topicsGrid">
+                <!-- Topics will be dynamically loaded here -->
+            </div>
+            
+            <button id="backToCourseBtn" class="btn btn-secondary" style="margin-top: 20px;">← Back to Courses</button>
+        </div>
+    </div>
+
+    <!-- Topic Explanation Screen -->
+    <div id="topicExplanationScreen" class="screen">
+        <div class="container">
+            <div class="card" style="max-width: 900px; margin: 0 auto;">
+                <div id="topicExplanationContent">
+                    <!-- Topic explanation will be loaded here -->
+                </div>
+                
+                <div class="navigation-buttons" style="margin-top: 30px;">
+                    <button id="backToTopicsBtn" class="btn btn-secondary">← Back to Topics</button>
+                    <button id="startPracticeBtn" class="btn btn-primary">Start Practice Questions →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Registration Screen -->
     <div id="registrationScreen" class="screen">
         <div class="container">
@@ -189,6 +222,7 @@
     <script src="DTS201_QUESTIONS_DATABASE.js"></script>
     <script src="COS201_QUESTIONS_DATABASE.js"></script>
     <script src="MAT201_QUESTIONS_DATABASE.js"></script>
+    <script src="MAT201_TOPICS.js"></script>
     <script src="exam-system.js"></script>
 </body>
 </html>
