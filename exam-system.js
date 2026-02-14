@@ -19,6 +19,17 @@ class ExamSystem {
                 title: 'COS201',
                 subtitle: 'Computer Programming I',
                 questions: typeof COS201_QUESTIONS !== 'undefined' ? COS201_QUESTIONS : []
+            },
+            'MAT201_STUDY': {
+                title: 'MAT201 Study Mode',
+                subtitle: 'Mathematics - Learn with Solutions',
+                questions: typeof MAT201_QUESTIONS !== 'undefined' ? MAT201_QUESTIONS : [],
+                isStudyMode: true
+            },
+            'MAT201_EXAM': {
+                title: 'MAT201 Exam',
+                subtitle: 'Mathematics - Test Yourself',
+                questions: typeof MAT201_QUESTIONS !== 'undefined' ? MAT201_QUESTIONS : []
             }
         };
         
@@ -55,7 +66,12 @@ class ExamSystem {
         document.getElementById('courseTitle').textContent = course.title;
         document.getElementById('courseSubtitle').textContent = course.subtitle;
         
-        this.showScreen('registrationScreen');
+        // For study mode, skip registration and go directly to study
+        if (course.isStudyMode) {
+            this.startStudyMode();
+        } else {
+            this.showScreen('registrationScreen');
+        }
     }
     
     startExam() {
@@ -134,6 +150,7 @@ class ExamSystem {
     
     displayQuestion() {
         const question = this.examQuestions[this.currentQuestionIndex];
+        const isStudyMode = this.courseData[this.selectedCourse]?.isStudyMode;
         
         document.getElementById('questionText').textContent = question.question;
         document.getElementById('currentQuestion').textContent = this.currentQuestionIndex + 1;
@@ -151,9 +168,26 @@ class ExamSystem {
                 optionDiv.classList.add('selected');
             }
             
+            // In study mode, show correct answer
+            if (isStudyMode && index === question.correct) {
+                optionDiv.classList.add('correct-answer');
+                optionDiv.textContent = '✓ ' + option;
+            }
+            
             optionDiv.addEventListener('click', () => this.selectOption(index));
             optionsContainer.appendChild(optionDiv);
         });
+        
+        // Show explanation in study mode
+        if (isStudyMode) {
+            const explanationDiv = document.createElement('div');
+            explanationDiv.className = 'explanation-box';
+            explanationDiv.innerHTML = `
+                <h4>Solution:</h4>
+                <p>${question.explanation || 'No explanation available.'}</p>
+            `;
+            optionsContainer.appendChild(explanationDiv);
+        }
         
         this.updateProgress();
         this.updateNavigationButtons();
@@ -402,6 +436,23 @@ class ExamSystem {
             
             container.appendChild(reviewDiv);
         });
+    }
+    
+    
+    startStudyMode() {
+        const courseQuestions = this.courseData[this.selectedCourse].questions;
+        this.examQuestions = courseQuestions; // Use all questions
+        this.currentQuestionIndex = 0;
+        this.userAnswers = new Array(this.examQuestions.length).fill(null);
+        
+        this.showScreen('examScreen');
+        document.getElementById('displayName').textContent = 'Study Mode';
+        document.getElementById('displayMatric').textContent = '';
+        document.querySelector('.timer-container').style.display = 'none'; // Hide timer
+        document.getElementById('submitBtn').textContent = 'Finish Study';
+        
+        this.displayQuestion();
+        this.createQuestionGrid();
     }
     
     retakeExam() {

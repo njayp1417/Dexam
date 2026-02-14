@@ -1,0 +1,170 @@
+Total pages: 37
+
+=== PAGE 1 ===
+1.If istheequationofacurve,findtheslopeatpoint(1,2) x- =6 y3yx3
+*A.-2/11
+B.2/11
+C.6
+D.2
+E.11
+2.If istheequationofacurve,findtheequationofthetangentatpoint(1,2) x- =6 y3yx3
+*A.2x+11y-24=0
+B.2x-11y+24=0
+C.11y-24=0
+D.2x-24=0
+E.2x+1
+3.If ,obtainthederivative + =3a x3y3x2 dy
+dx
+*A.(2ax-)/x2y2
+B.2ax+/x2y2
+C.2ax-/x2y2
+D.2ax+/x2y2
+E.2ax-x2
+4.if find at(0,0) y =sinx exy yd2
+dx2
+A.2
+*B.0
+C.1
+D.cosx
+E.sinx
+5.if .Obtainthevalueof at(0,1,2) +xy-z=6 z3y2 ∂y
+∂x
+A.1
+*B.¼
+==================================================
+
+=== PAGE 2 ===
+C.-1/11
+D.6
+E.2
+6.if .Obtainthevalueof at(0,1,2) +xy-z=6 z3y2 y∂2
+∂x2
+A.¼
+*B.-1/11
+C.6
+D.1
+E.2
+7.Statethedegreeofhomogeneousfunction( +(x2y)2)3
+A.0
+B.1
+*C.3
+D.2
+E.2/3
+8.Obtainthedegreeofthehomogeneousfunctionx1/3y-4/3tan-1(y/x)
+A.0
+B.1
+*C.-1
+D.2
+E.2/3
+9.IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1)
+offx
+A.1
+B.x+2y
+*C.2x+y
+D.0
+E.2
+10.IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1)
+==================================================
+
+=== PAGE 3 ===
+offy
+A.1
+B.-1
+C.2x+y
+*D.x+2y
+E.2
+11.IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1)
+offxy
+A.x+2y
+B.-1
+C.2x+y
+*D.1
+E.2
+12.IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1)
+offxx
+A.x+2y
+B.-1
+C.2x+y
+*D.2
+E.0
+13.IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1)
+offyy
+A.x+2y
+B.-1
+C.2x+y
+*D.2
+E.0
+14.IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1)
+offxxx
+A.x+2y
+B.-1
+==================================================
+
+=== PAGE 4 ===
+C.2x+y
+D.2
+*E.0
+15.IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1)
+offxxy
+A.x+2y
+B.-1
+C.2x+y
+D.2
+*E.0
+16.IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1)
+offyyx
+A.x+2y
+B.-1
+C.2x+y
+D.2
+*E.0
+17.IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1)
+offyyy
+*A.0
+B.-1
+C.2x+y
+D.2
+E.0
+18.StatethecoefficientofintheMaclaurinexpansionof fyy f = (x,y)ex+y
+*A.½
+B.0
+C.2
+D.1
+E.x+y
+19.StatethecoefficientofintheMaclaurinexpansionof fxy f = (x,y)ex+y
+==================================================
+
+=== PAGE 5 ===
+A.½
+B.0
+C.2
+*D.1
+E.x+y
+20.Statethestationaryvaluesforthefunctionf = +3x-15-15 +72x (x,y)x3y2x2y2
+*A.(6,0),(4,0),(5,1),(5,-1)
+B.(-6,0),(4,0),(5,1),(5,-1)
+C.(6,0),(4,0),(5,1),(-5,1)
+D.(6,0),(4,0),(1,5),(5,-1)
+E.(6,0),(-4,0),(5,1),(5,-1)
+21.Whichofthestationaryvaluesofthefunction givesthe f = +3x-15-15 +72x (x,y)x3y2x2y2
+maximum?
+*A.(4,0)
+B.(6,0)
+C.(5,1)
+D.(5,-1)
+E.(0,0)
+22.Whichofthestationaryvaluesofthefunction givesthe f = +3x-15-15 +72x (x,y)x3y2x2y2
+minimum?
+A.(4,0)
+*B.(6,0)
+C.(5,1)
+D.(5,-1)
+E.(0,0)
+23.Whichofthestationaryvaluesofthefunction givesthe f = +3x-15-15 +72x (x,y)x3y2x2y2
+saddle?
+A.(6,0),(4,0)
+B.(-6,0),(4,0)
+*C.(5,1),(5,-1)
+D.(-6,0),(4,0)
+==================================================
+

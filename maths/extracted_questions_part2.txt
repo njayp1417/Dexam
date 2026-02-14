@@ -1,0 +1,350 @@
+MATHEMATICS QUESTIONS - PART 2 (Questions 51-100)
+
+51. Which of the following is true for the mean value theorem, given a function f(x) = 1 - 3x in the interval (1, 4)
+A. The value is not in the interval
+*B. It satisfies any value in the interval
+C. It is not well posed
+D. None of the above
+E. All of the above
+
+52. If f(x) = cos x in (0, π/2), Obtain the value of c which satisfies the mean value theorem.
+A. cos x
+B. sin⁻¹(1/π)
+*C. sin⁻¹(2/π)
+D. cos⁻¹(2/π)
+E. sin⁻¹(-1/π)
+
+53. Obtain the Maclaurin series for f(x) = e^x
+A. 1 + x - x²/2! + x³/3! - x⁴/4! + ...
+B. x + x²/2! + x³/3! + x⁴/4! + ...
+C. x - x²/2! + x³/3! - x⁴/4! + ...
+*D. 1 + x + x²/2! + x³/3! + x⁴/4! + ...
+E. 1 + x + x²/2! + x⁴/4! + ...
+
+54. Obtain the Maclaurin series for f(x) = sin x
+A. 1 + x + x²/2! + x³/3! + x⁴/4! + ...
+B. 1 + x + x²/2! + x⁴/4! + ...
+C. x - x²/2! + x³/3! - x⁴/4! + x⁵/5! - x⁷/7! + ...
+D. x + x²/2! + x³/3! + x⁴/4! + x⁵/5! + x⁷/7! + ...
+*E. x - x³/3! + x⁵/5! - x⁷/7! + ...
+
+55. Obtain the Taylor's series expansion for the function f(x) = sinh x at x = 0
+*A. x + x³/3! + x⁵/5! + x⁷/7! + ...
+B. 1 + x + x²/2! + x³/3! + x⁴/4! + x⁵/5! + x⁷/7! + ...
+C. 1 + x + x³/3! + x⁵/5! + x⁷/7! + ...
+D. 1 - x + x²/2! - x³/3! + x⁴/4! - x⁵/5! + x⁷/7! - ...
+E. None of the above
+
+56. Obtain the Taylor's series expansion for the function f(x) = cosh x at x = 0
+*A. 1 + x²/2! + x⁴/4! + x⁶/6! + ...
+B. 1 + x + x²/2! + x³/3! + x⁴/4! + x⁵/5! + x⁷/7! + ...
+C. 1 + x + x³/3! + x⁵/5! + x⁷/7! + ...
+D. 1 - x + x²/2! - x³/3! + x⁴/4! - x⁵/5! + x⁷/7! - ...
+
+57. Evaluate lim(x→1) (1 + ln x - x)/(1 - 2x + x²)
+A. 1
+*B. -1/2
+C. 1/2
+D. -1
+E. 0
+
+58. Evaluate lim(x→0) (e^(ax) - e^(-ax))/ln(1 + bx)
+A. a
+B. x
+*C. 2a/b
+D. a/b
+E. 1/b
+
+59. Obtain the value of lim(x→1) (x² - 1)/(x² + 1)
+A. -1
+*B. 1
+C. 1/2
+D. 0
+E. ∞
+
+60. Obtain the value of lim(x→∞) x^n/e^x
+A. -1
+B. 1
+C. 1/2
+*D. 0
+E. ∞
+
+61. Evaluate lim(x→1) [x/(x-1) - 1/ln x]
+A. -1
+B. 1
+*C. 1/2
+D. 0
+E. ∞
+
+62. Find the value of lim(x→∞) (e^x + x)^(1/x)
+A. -1
+B. 1
+C. 1/2
+*D. e
+E. ∞
+
+63. Find the value of lim(x→π/2) (tan x)^(tan 2x)
+A. -1
+*B. 1
+C. 1/2
+D. e
+E. ∞
+
+64. Find the value of lim((x,y)→(0,0)) (x² + y²)/(y² - x²)
+A. -1
+B. 1
+*C. Does not exist
+D. e
+E. 0
+
+65. Obtain ∂w/∂x if w = e^x cos y
+A. cos y
+B. e^x sin y
+*C. e^x cos y
+D. -e^x cos y
+E. e^x cosec y
+
+66. Obtain ∂w/∂y if w = e^x cos y
+A. cos y
+*B. -e^x sin y
+C. e^x cos y
+D. -e^x cos y
+E. e^x cosec y
+
+67. If w = tan⁻¹(y/x), find ∂w/∂x
+*A. -y/(x² + y²)
+B. (x² + y²)/(-y)
+C. -y/(x² + y²)/(-y)
+D. -x/(x² + y²)
+E. -y/(x² - y²)
+
+68. If w = tan⁻¹(y/x), find ∂w/∂y
+A. -y/(x² + y²)
+B. (x² + y²)/(-y)
+C. -y/(x² + y²)/(-y)
+*D. x/(x² + y²)
+E. -y/(x² - y²)
+
+69. If f(x,y,z,w) = x²e^(2y+3z) cos 4w, obtain ∂f/∂w
+*A. -4x²e^(2y+3z) sin 4w
+B. 4x²e^(2y+3z) sin 4w
+C. x²e^(2y+3) cos 4w
+D. -x²e^(2y+3) cos 4w
+E. x²e^(2y+3z) sin 4w
+
+70. If f(x,y,z,w) = x²e^(2y+3z) cos 4w, obtain ∂f/∂z
+A. -4x²e^(2y+3z) sin 4w
+B. 4x²e^(2y+3z) sin 4w
+*C. 3x²e^(2y+3z) cos 4w
+D. -x²e^(2y+3) cos 4w
+E. x²e^(2y+3z) sin 4w
+
+71. find ∂³U/∂x∂y∂z if U = e^(x² + y² + z²)
+*A. 8xyz U
+B. xyz U
+C. 8xyz
+D. 8xz U
+E. x² + y² + z²
+
+72. If U = ln(x³ + y³ - x²y - y²x), then obtain the value of Uxx + 2Uxy + Uyy
+*A. -4/(x + y)²
+B. 4/(x + y)²
+C. -4/(x - y)²
+D. 4/(x - y)²
+E. (x - y)²/y
+
+73. If f(x,y,z) = z sin⁻¹(y/x) find ∂f/∂x
+*A. -yz/√(x⁴ - x²y²)
+B. yz/√(x⁴ - x²y²)
+C. yz/√(x⁴ + x²y²)
+D. -yz/√(x⁴ - x²y²)
+E. -yz/√(x⁴ + x²y²)
+
+74. if f(u,v,w) = (u² - v²)/(v² + w²), find ∂f/∂v
+A. 2v(v² + w²)/(v² + w²)²
+*B. -2v(v² + w²)/(v² + w²)²
+C. -2v(v² + w²)/(v² - w²)²
+D. -2v(v² - w²)/(v² + w²)²
+E. 2v(v² - w²)/(v² + w²)²
+
+75. if f(u,v,w) = (u² - v²)/(v² + w²), find ∂f/∂w
+*A. -2w(u² - v²)/(v² + w²)²
+B. -2v(v² + w²)/(v² + w²)²
+C. -2v(v² + w²)/(v² - w²)²
+D. -2v(v² - w²)/(v² + w²)²
+E. 2v(v² - w²)/(v² + w²)²
+
+76. if z = x² + 2y², x = r cos θ, y = r sin θ, Obtain the value of (∂z/∂x)_y
+*A. 2x
+B. 2y
+C. 2z
+D. x
+E. y
+
+77. if z = x² + 2y², x = r cos θ, y = r sin θ, Obtain the value of (∂z/∂x)_θ
+A. 2x(1 - 2tan²θ)
+B. x(1 + 2tan²θ)
+*C. 2x(1 + 2tan²θ)
+D. 2x(1 + tan²θ)
+E. 2x(2tan²θ)
+
+78. If u = x² + y² + z², x = e^(2t), y = e^(2t) cos 3t, z = e^(2t) sin 3t, find du/dt
+A. 8
+B. 2e^(2t)
+*C. 8e^(2t)
+D. 6e^(2t)
+E. 4e^(2t)
+
+79. Find the total differential coefficient of x²y with respect to x where x,y are connected by x² + xy + y² = 1
+A. 2xy + x²(2x + y)/(x + 2y)
+B. 2xy - x²(2x - y)/(x + 2y)
+*C. 2xy - x²(2x + y)/(x + 2y)
+D. 2xy - x²(2x - y)/(x - 2y)
+E. 2xy + x²(2x - y)/(x + 2y)
+
+80. The altitude of a right circular cone is 15cm and is increasing at 0.2cm/sec. The radius of the base is 10cm and is decreasing at 0.3cm/sec. how fast is the volume changing?
+*A. -70π/3 cm³/s
+B. 70π/3 cm³/s
+C. -70π/3 cm²
+D. 70π/3 cm²
+E. -70π cm²/s
+
+81. The altitude of a right circular cone is 15cm and is increasing at 0.2cm/sec. The radius of the base is 10cm and is decreasing at 0.3cm/sec. At what rate is the volume decreasing?
+*A. -70π/3 cm³/s
+B. 70π/3 cm³/s
+C. -70π/3 cm²
+D. 70π/3 cm²
+E. -70π cm²/s
+
+82. If U = tan⁻¹(y/x) and at x = e^t - e^(-t), y = e^t + e^(-t) find dy/dx
+A. -2/(e^(2t) - e^(-2t))
+B. -2/(e^(2t) - e^(-2t))
+C. 2/(e^(2t) - e^(-2t))
+D. 2/(e^(2t) + e^(-2t))
+*E. -2/(e^(2t) + e^(-2t))
+
+83. In other that the function U = 2xy - 3x²y remains constant. what should be the rate of change of y given that x increases at the rate of 2cm/s at the instant when x = 3cm and y = 1cm
+*A. -32/21 cm/s
+B. 32/21 cm/s
+C. -32/2 cm/s
+D. -32 cm/s
+E. 32 cm/s
+
+84. Find the rate at which the area of a rectangle is increasing at a given instant when the sides of the rectangle are 4ft and 3ft and increasing at the rate of 1.5ft/sec and 0.5ft/sec respectively.
+A. 4 sqft/sec
+B. 3 sqft/sec
+C. 12 sqft/sec
+*D. 6.5 sqft/sec
+E. 0.75 sqft/sec
+
+85. if u = x² - y², x = 2r - 3s + 4, y = -r + 8s - 5, obtain du/dr
+A. 2r - 3s + 4
+B. -r + 8s - 5
+*C. 2(2x + y)
+D. (2x + y)
+E. (2x - y)
+
+86. if u = x² - y², x = 2r - 3s + 4, y = -r + 8s - 5, obtain du/ds
+A. 2r - 3s + 4
+B. -r + 8s - 5
+*C. -6x - 16y
+D. (2x + y)
+E. (2x - y)
+
+87. If x⁵ + y⁵ = a³x² Obtain d²y/dx²
+*A. 6a³x²/(a³ + x³)y⁹
+B. 6a³x²/(a³ - x³)y⁹
+C. 6a³/(a³ + x³)y⁹
+D. 6a³x²/(a³ + x³)y³
+E. a³x²/(a³ + x³)y⁹
+
+88. Compute ∂z/∂x at (1,-1, 2) if x² + y² = z² + a²
+A. 0
+B. 1
+*C. -1/2
+D. -1
+E. 2
+
+89. Compute ∂z/∂y at (1,-1, 2) if x² + y² = z² + a²
+A. 0
+*B. 1
+C. -1/2
+D. -1
+E. 2
+
+90. If y = 2x³ - 2x + 4x, find d³y/dx³
+A. 24x
+B. 0
+*C. 24
+D. x
+E. -24
+
+91. Obtain the Stationary point for the function y = 2x³ + 3x² - 12x + 4
+*A. (1, 3), (-2, 24)
+B. (3, 1), (-24, 2)
+C. (-1, -3), (-2, 24)
+D. (1, 3), (-2, -24)
+E. (-1, 3), (-2, 24)
+
+92. Which of the Stationary points for the function y = 2x³ + 3x² - 12x + 4 gives the maximum
+A. (-1, 3)
+B. (3, 1)
+*C. (-2, 24)
+D. (1, 3)
+E. (-24, 2)
+
+93. Which of the Stationary points for the function y = 2x³ + 3x² - 12x + 4 gives the minimum
+A. (-1, 3)
+B. (3, 1)
+C. (-2, 24)
+*D. (1, 3)
+E. (-24, 2)
+
+94. If x² + xy + y⁴ = 7 find dy/dx
+*A. -(2x + y)/(x + 4y³)
+B. (2x + y)/(x + 4y³)
+C. -(2x + y)/(x + 4y³)
+D. -(2x + y)/4y³
+E. (2x + 3y)/(x + 4y³)
+
+95. ∫x cos x dx =
+*A. x sin x + cos x + c
+B. sin x + cos x + c
+C. x sin x + cos x
+D. x sin x - cos x + c
+E. x cos x + sin x + c
+
+96. ∫₀^(π/2) x cos x dx
+A. 0
+B. 2
+C. 1
+*D. π/2 - 1
+E. π/2
+
+97. ∫x sin x dx =
+A. x sin x + cos x + c
+B. sin x + cos x + c
+C. x sin x + cos x
+D. x sin x - cos x + c
+*E. -x cos x + sin x + c
+
+98. ∫₀^(π/2) x cos x dx
+A. 0
+B. 2
+*C. 1
+D. π/2 - 1
+E. π/2
+
+99. Evaluate the line integral I = ∫_c (x² + 2y)dx + (x + y²)dy from A(0, 1) to B(2, 3) along the curve c, defined by y = x + 1.
+*A. 64/3
+B. 64
+C. 32/3
+D. 32
+E. 1/32
+
+100. Evaluate ∫_c (x + 2y)dx from A(0, 1) to B(1, 0) along the curve c defined by y = 1 - x.
+A. -1
+*B. 1
+C. 0
+D. 2
+E. -2

@@ -1,0 +1,1647 @@
+Total questions extracted: 153
+
+================================================================================
+
+Question 1:
+If istheequationofacurve,findtheslopeatpoint(1,2) x- =6 y3yx3 *
+
+  A.-2/11
+  B.2/11
+  C.6
+  D.2
+  E.11
+
+--------------------------------------------------------------------------------
+
+Question 2:
+If istheequationofacurve,findtheequationofthetangentatpoint(1,2) x- =6 y3yx3 *
+
+  A.2x+11y-24=0
+  B.2x-11y+24=0
+  C.11y-24=0
+  D.2x-24=0
+  E.2x+1
+
+--------------------------------------------------------------------------------
+
+Question 3:
+If ,obtainthederivative + =3a x3y3x2 dy dx *
+
+  A.(2ax-)/x2y2
+  B.2ax+/x2y2
+  C.2ax-/x2y2
+  D.2ax+/x2y2
+  E.2ax-x2
+
+--------------------------------------------------------------------------------
+
+Question 4:
+if find at(0,0) y =sinx exy yd2 dx2 
+
+  *A.2
+  B.0
+  C.1
+  D.cosx
+  E.sinx
+
+--------------------------------------------------------------------------------
+
+Question 5:
+if .Obtainthevalueof at(0,1,2) +xy-z=6 z3y2 ∂y ∂x 
+
+  *A.1
+  B.¼
+  C.-1/11
+  D.6
+  E.2
+
+--------------------------------------------------------------------------------
+
+Question 6:
+if .Obtainthevalueof at(0,1,2) +xy-z=6 z3y2 y∂2 ∂x2 
+
+  *A.¼
+  B.-1/11
+  C.6
+  D.1
+  E.2
+
+--------------------------------------------------------------------------------
+
+Question 7:
+Statethedegreeofhomogeneousfunction( +(x2y)2)3 
+
+  A.0
+  *B.1
+  C.3
+  D.2
+  E.2/3
+
+--------------------------------------------------------------------------------
+
+Question 8:
+Obtainthedegreeofthehomogeneousfunctionx1/3y-4/3tan-1(y/x) 
+
+  A.0
+  *B.1
+  C.-1
+  D.2
+  E.2/3
+
+--------------------------------------------------------------------------------
+
+Question 9:
+IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1) offx 
+
+  A.1
+  *B.x+2y
+  C.2x+y
+  D.0
+  E.2
+
+--------------------------------------------------------------------------------
+
+Question 10:
+IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1) offy 
+
+  A.1
+  B.-1
+  *C.2x+y
+  D.x+2y
+  E.2
+
+--------------------------------------------------------------------------------
+
+Question 11:
+IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1) offxy 
+
+  A.x+2y
+  B.-1
+  *C.2x+y
+  D.1
+  E.2
+
+--------------------------------------------------------------------------------
+
+Question 12:
+IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1) offxx 
+
+  A.x+2y
+  B.-1
+  *C.2x+y
+  D.2
+  E.0
+
+--------------------------------------------------------------------------------
+
+Question 13:
+IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1) offyy 
+
+  A.x+2y
+  B.-1
+  *C.2x+y
+  D.2
+  E.0
+
+--------------------------------------------------------------------------------
+
+Question 14:
+IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1) offxxx 
+
+  A.x+2y
+  B.-1
+  C.2x+y
+  *D.2
+  E.0
+
+--------------------------------------------------------------------------------
+
+Question 15:
+IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1) offxxy 
+
+  A.x+2y
+  B.-1
+  C.2x+y
+  *D.2
+  E.0
+
+--------------------------------------------------------------------------------
+
+Question 16:
+IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1) offyyx 
+
+  A.x+2y
+  B.-1
+  C.2x+y
+  *D.2
+  E.0
+
+--------------------------------------------------------------------------------
+
+Question 17:
+IntheTaylor’sexpansionof inpowersof and ,statethevalue f = +xy+ (x,y)x2y2(x-1) (y-1) offyyy *
+
+  A.0
+  B.-1
+  C.2x+y
+  D.2
+  E.0
+
+--------------------------------------------------------------------------------
+
+Question 18:
+StatethecoefficientofintheMaclaurinexpansionof fyy f = (x,y)ex+y *
+
+  A.½
+  B.0
+  C.2
+  D.1
+  E.x+y
+
+--------------------------------------------------------------------------------
+
+Question 19:
+StatethecoefficientofintheMaclaurinexpansionof fxy f = (x,y)ex+y 
+
+  A.½
+  B.0
+  *C.2
+  D.1
+  E.x+y
+
+--------------------------------------------------------------------------------
+
+Question 20:
+Statethestationaryvaluesforthefunctionf = +3x-15-15 +72x (x,y)x3y2x2y2 *
+
+  A.(6,0),(4,0),(5,1),(5,-1)
+  B.(-6,0),(4,0),(5,1),(5,-1)
+  C.(6,0),(4,0),(5,1),(-5,1)
+  D.(6,0),(4,0),(1,5),(5,-1)
+  E.(6,0),(-4,0),(5,1),(5,-1)
+
+--------------------------------------------------------------------------------
+
+Question 21:
+Whichofthestationaryvaluesofthefunction givesthe f = +3x-15-15 +72x (x,y)x3y2x2y2 maximum? *
+
+  A.(4,0)
+  B.(6,0)
+  C.(5,1)
+  D.(5,-1)
+  E.(0,0)
+
+--------------------------------------------------------------------------------
+
+Question 22:
+Whichofthestationaryvaluesofthefunction givesthe f = +3x-15-15 +72x (x,y)x3y2x2y2 minimum? 
+
+  *A.(4,0)
+  B.(6,0)
+  C.(5,1)
+  D.(5,-1)
+  E.(0,0)
+
+--------------------------------------------------------------------------------
+
+Question 23:
+Whichofthestationaryvaluesofthefunction givesthe f = +3x-15-15 +72x (x,y)x3y2x2y2 saddle? 
+
+  A.(6,0),(4,0)
+  *B.(-6,0),(4,0)
+  C.(5,1),(5,-1)
+  D.(-6,0),(4,0)
+  E.(6,0),(-4,0)
+
+--------------------------------------------------------------------------------
+
+Question 24:
+Obtainthevalueofthefunction atthemaximumpoint. f = +3x-15-15 +72x (x,y)x3y2x2y2 
+
+  A.6
+  B.-36
+  *C.108
+  D.112
+  E.Noneoftheabove
+
+--------------------------------------------------------------------------------
+
+Question 25:
+Obtainthevalueofthefunction attheminimumpoint. f = +3x-15-15 +72x (x,y)x3y2x2y2 
+
+  A.6
+  *B.-36
+  C.108
+  D.112
+  E.Noneoftheabove
+
+--------------------------------------------------------------------------------
+
+Question 26:
+Evaluate∫π 2 0 xdx sin7 
+
+  A.6/7
+  B.4/5
+  C.2/3
+  *D.3/8
+  E.16/35
+
+--------------------------------------------------------------------------------
+
+Question 27:
+Determinetheareaenclosedbythecurve =(2a-y) a2x2y3 *
+
+  A.πa2
+  B.x3
+  C.y3
+  D.πa3
+  E. (2a-y) πy3
+
+--------------------------------------------------------------------------------
+
+Question 28:
+Determinethevolumeofsolidgeneratedbyrevolvingtheplaneareaboundedby and =4x y2 x=4aboutthelinex=4. *
+
+  A.1024π/15
+  B.1024/15
+  C.1024
+  D.15
+  E.π
+
+--------------------------------------------------------------------------------
+
+Question 29:
+Whatisthevolumegeneratedbyrevolvingtheareaenclosedbytheloopofthecurve abouttheaxis. =x(4-x) y4x *
+
+  A.2π2
+  B.π2
+  C.-π2
+  D.4π2
+  E.-2π2
+
+--------------------------------------------------------------------------------
+
+Question 30:
+findtheareaofthesurfacegeneratedbyrevolvingthecurvewithparametricequations , x =3t (t) (t-2)y =8(t)t3 2 *
+
+  A.39π
+  B.-39π
+  C.8π
+  D.3π
+  E.39/2π
+
+--------------------------------------------------------------------------------
+
+Question 31:
+Evaluate ,whereDisboundedby∬D dxdy (+x2y2)y=x,=4x y2 
+
+  A.384/35
+  B.768/35
+  *C.-384/35
+  D.768/35
+  E.Noneoftheabove
+
+--------------------------------------------------------------------------------
+
+Question 32:
+Solve dx ∫[+3 2x-52 x-8] *
+
+  A.ln +2ln +C3 2(2x-5) (x-8)
+  B. . ln +2ln +C3 2(2x+5) (x-8)
+  C.ln +ln +C (2x-5) (x-8)
+  D.ln +2ln +C3 2(2x-5) (x+8)
+  E.ln +C3 2(2x-5)
+
+--------------------------------------------------------------------------------
+
+Question 33:
+Express inPartialFraction5x-21 (x-3)2 
+
+  *A.(5x-21)/(x-3)
+  B.5/(x-3)-6/(x-3)2
+  C.-6/(x-3)2
+  D.5/(x-3)
+  E.0
+
+--------------------------------------------------------------------------------
+
+Question 34:
+Whichofthefollowingiscontinuousatthespecifiedpoint: 
+
+  A.f = ,atx=0 (x)sinx x
+  B.f = ,atx=1 (x)-1x2 x-1
+  C.f =,atx=0 (x)1 x
+  *D.f = ,atx=3 (x)-9x2 x-3
+  E.f = ,atx=0 (x)3x x+5
+
+--------------------------------------------------------------------------------
+
+Question 35:
+Let .Let berealvaluedfunctionswhicharedifferentiableat and f:I→RwhereI→R g:I→R pϵI let .thenwhichofthefollowingstatementislikelynottobetrue λϵR 
+
+  A. isadifferentiableat f+g x=p
+  B. isadifferentiableat λf x=p
+  *C. isadifferentiableat fg x=p
+  D. isadifferentiableat provided f/g x=p g(p)≠0
+  E. isacontinuousat f,g x=p
+
+--------------------------------------------------------------------------------
+
+Question 36:
+Evaluate ,ifCisthelinesegmentofthestraightline I=∫C dx (x-y2) y=x,0≤x≤1 *
+
+  A.1/6
+  B.1
+  C.0
+  D.x=y
+  E.2/3
+
+--------------------------------------------------------------------------------
+
+Question 37:
+Evaluatethedoubleintegral whereRistheregionboundedbyline I=∬R dxdy (+y x2) y=x2 andthecurve. *
+
+  A.1/6
+  B.1/3
+  C.2/3
+  D.0
+  E.-1
+
+--------------------------------------------------------------------------------
+
+Question 38:
+if ,the derivativeof is a=e nth y=amx 
+
+  A.mamxa loge
+  *B.am2mx( a loge)2
+  C.emnmx
+  D.mamx
+  E.amx( a loge)2
+
+--------------------------------------------------------------------------------
+
+Question 39:
+Obtainthederivativeofy=cos eax(bx+c) *
+
+  A. [acos -bsin ] eax(bx+c) (bx+c)
+  B. cos eax(bx+c)
+  C.acos(bx+c)
+  D.-bsin(bx+c)
+  E.-acos(bx+c)
+
+--------------------------------------------------------------------------------
+
+Question 40:
+Obtainthederivativeoflnxx3 
+
+  *A. lnx 3x2
+  B. lnx+ 3x2x2
+  C.lnxx2
+  D.3lnx
+  E. lnx- 3x2x2
+
+--------------------------------------------------------------------------------
+
+Question 41:
+obtain ifyd2 dx2+ =3axy x3y3 
+
+  *A.2xy/a3(-ax y2)3
+  B.-2xy/a3(-ax y2)3
+  C.(-ax y2)3
+  D.-2x/a3(-ax y2)3
+  E.-2xy/(-ax y2)3
+
+--------------------------------------------------------------------------------
+
+Question 42:
+If obtain y=tan-12x 1-x2dy dx *
+
+  A.2/(1+)x2
+  B.2/(x+)x2
+  C.-2/(1+)x2
+  D.2/(1-)x2
+  E.x/(1+)x2
+
+--------------------------------------------------------------------------------
+
+Question 43:
+Giventhat ,find y=(1 x)xyd2 dx2 
+
+  A.x
+  *B.–x
+  C.0
+  D.-1
+  E.1
+
+--------------------------------------------------------------------------------
+
+Question 44:
+Obtainthefirstderivativeofy=xsinx 
+
+  A.xsinx
+  B.sinx
+  *C.xsinx-cosx
+  D.xcosx+sinx
+  E.cosx
+
+--------------------------------------------------------------------------------
+
+Question 45:
+If ,then is………………. =a +b +c +d +ex+f x5x4x3x2 yd6 dx6 
+
+  A.a
+  B.b
+  C.e
+  *D.3
+  E.0
+
+--------------------------------------------------------------------------------
+
+Question 46:
+Giventhat ,obtain y=sinx x2 dy dx 
+
+  A.cosx x2
+  B.cosx
+  *C.sinx
+  D.cosx+2xsinx x2
+  E.cosx-2xsinx x2
+
+--------------------------------------------------------------------------------
+
+Question 47:
+Obtainthederivativeof at y= lnx xn-1x=1/2 
+
+  A. lnx xn-1
+  *B. ln2x xn-1
+  C. lnx+ (n-1)xn-2xn-2
+  D. lnx+ (n-1)xn-2(n-1)xn-2
+  E. lnx+ (n-1)xn-1(n-1)xn-2
+
+--------------------------------------------------------------------------------
+
+Question 48:
+Giventhat in(1,5).Obtainthevalueofcwhichsatisfiesthemeanvaluetheorem f =(x)x2 
+
+  *A.2
+  B.3
+  C.-1
+  D.1
+  E.0
+
+--------------------------------------------------------------------------------
+
+Question 49:
+Giventhat in(0,½).Obtainthevalueofcwhichsatisfiesthemeanvalue f =x(x-1)(x-2) (x) theorem *
+
+  A.0.236
+  B.0.5
+  C.0.1
+  D.1
+  E.-1
+
+--------------------------------------------------------------------------------
+
+Question 50:
+If withintheinterval .Obtainthevalueofcwhichsatisfiesthemeanvalue f =lnx (x)(,e2e3) theorem. *
+
+  A.(e-1)e2
+  B.(e-1)
+  C.(e-2)
+  D.2(e-1)
+  E.e2
+
+--------------------------------------------------------------------------------
+
+Question 51:
+Whichofthefollowingistrueforthemeanvaluetheorem,givenafunction inthe f =1-3x (x) interval(1,4) 
+
+  *A.Thevalueisnotintheinterval
+  B.Itsatisfiesanyvalueintheinterval
+  C.Itisnotwellposed
+  D.Noneoftheabove
+  E.Alloftheabove
+
+--------------------------------------------------------------------------------
+
+Question 52:
+If in ,Obtainthevalueofcwhichsatisfiesthemeanvaluetheorem. f =cosx (x)(0,π/2) 
+
+  A.cosx
+  *B.sin-1(1/π)
+  C.sin-1(2/π)
+  D.cos-1(2/π)
+  E.sin-1(-1/π)
+
+--------------------------------------------------------------------------------
+
+Question 53:
+ObtaintheMaclaurinseriesforf =(x)ex 
+
+  A.1+x-+-+…x2 2!x3 3!x4 4!
+  B.x+ + + +…x2 2!x3 3!x4 4!
+  *C.x-+-+…x2 2!x3 3!x4 4!
+  D.1+x+ + + +…x2 2!x3 3!x4 4!
+  E.1+x+ + +…x2 2!x4 4!
+
+--------------------------------------------------------------------------------
+
+Question 54:
+ObtaintheMaclaurinseriesforf =sinx (x) 
+
+  A.1+x+ + + +…x2 2!x3 3!x4 4!
+  B.1+x+ + +…x2 2!x4 4!
+  C.x-+-+-+…x2 2!x3 3!x4 4!x5 5!x7 7!
+  *D.x+ + + + + +…x2 2!x3 3!x4 4!x5 5!x7 7!
+  E.x-+-+…x3 3!x5 5!x7 7!
+
+--------------------------------------------------------------------------------
+
+Question 55:
+ObtaintheTaylor’sseriesexpansionforthefunction at f =sinhx (x) x=0 *
+
+  A.x+ + + +…x3 3!x5 5!x7 7!
+  B.1+x+ + + + + +…x2 2!x3 3!x4 4!x5 5!x7 7!
+  C.1+x+ + + +…x3 3!x5 5!x7 7!
+  D.1-x+ -+-+-…x2 2!x3 3!x4 4!x5 5!x7 7!
+  E.Noneoftheabove
+
+--------------------------------------------------------------------------------
+
+Question 56:
+ObtaintheTaylor’sseriesexpansionforthefunction at f =coshx (x) x=0 *
+
+  A.1+ + + +…x2 2!x4 4!x6 6!
+  B.1+x+ + + + + +…x2 2!x3 3!x4 4!x5 5!x7 7!
+  C.1+x+ + + +…x3 3!x5 5!x7 7!
+  D.1-x+ -+-+-…x2 2!x3 3!x4 4!x5 5!x7 7!
+
+--------------------------------------------------------------------------------
+
+Question 57:
+Evaluatelim x→11+lnx-x 1-2x+x2 
+
+  *A.1
+  B.-1/2
+  C.½
+  D.-1
+  E.0
+
+--------------------------------------------------------------------------------
+
+Question 58:
+Evaluatelim x→0-eaxe-ax ln (1+bx) 
+
+  A.a
+  *B.x
+  C.2a/b
+  D.a/b
+  E.1/b
+
+--------------------------------------------------------------------------------
+
+Question 59:
+Obtainthevalueoflim x→1-1x2 +1 x2 
+
+  *A.-1
+  B.1
+  C.½
+  D.0
+  E.∞
+
+--------------------------------------------------------------------------------
+
+Question 60:
+Obtainthevalueoflim x→∞xn ex 
+
+  A.-1
+  B.1
+  *C.½
+  D.0
+  E.∞
+
+--------------------------------------------------------------------------------
+
+Question 61:
+Evaluatelim x→1[-x x-11 lnx] 
+
+  A.-1
+  *B.1
+  C.½
+  D.0
+  E.∞
+
+--------------------------------------------------------------------------------
+
+Question 62:
+Findthevalueoflim x→∞(+x ex)1/x 
+
+  A.-1
+  B.1
+  *C.½
+  D.e
+  E.∞
+
+--------------------------------------------------------------------------------
+
+Question 63:
+Findthevalueoflim x→π/2(tanx)tan2x 
+
+  *A.-1
+  B.1
+  C.½
+  D.e
+  E.∞
+
+--------------------------------------------------------------------------------
+
+Question 64:
+Findthevalueoflim (x,y)→(0,0)+x2y2 -y2x2 
+
+  A.-1
+  *B.1
+  C.Doesnotexist
+  D.e
+  E.0
+
+--------------------------------------------------------------------------------
+
+Question 65:
+Obtain if∂w ∂xw=cosy ex 
+
+  A.cosy
+  *B.siny ex
+  C.cosy ex
+  D. cosy -ex
+  E.cosecy ex
+
+--------------------------------------------------------------------------------
+
+Question 66:
+Obtain if∂w ∂yw=cosy ex 
+
+  *A.cosy
+  B.-siny ex
+  C.cosy ex
+  D. cosy -ex
+  E.cosecy ex
+
+--------------------------------------------------------------------------------
+
+Question 67:
+If ,find w=tan-1y x∂w ∂x *
+
+  A.-y/(+) x2y2
+  B.(+)/-y x2y2
+  C.-y/(+)/-y x2y2
+  D.-x/(+) x2y2
+  E.-y/(-) x2y2
+
+--------------------------------------------------------------------------------
+
+Question 68:
+If ,find w=tan-1y x∂w ∂y 
+
+  A.-y/(+) x2y2
+  B.(+)/-y x2y2
+  *C.-y/(+)/-y x2y2
+  D.x/(+) x2y2
+  E.-y/(-) x2y2
+
+--------------------------------------------------------------------------------
+
+Question 69:
+If ,obtain f = cos4w (x,y,z,w)x2e2y+3z ∂f ∂w *
+
+  A. sin4w -4x2e2y+3z
+  B. sin4w 4x2e2y+3z
+  C. cos4w x2e2y+3
+  D. cos4w -x2e2y+3
+  E. sin4w x2e2y+3z
+
+--------------------------------------------------------------------------------
+
+Question 70:
+If ,obtain f = cos4w (x,y,z,w)x2e2y+3z ∂f ∂z 
+
+  A. sin4w -4x2e2y+3z
+  *B. sin4w 4x2e2y+3z
+  C. cos4w 3x2e2y+3z
+  D. cos4w -x2e2y+3
+  E. sin4w x2e2y+3z
+
+--------------------------------------------------------------------------------
+
+Question 71:
+find ifU∂3 ∂x∂y∂zU=e+ + x2y2z2 *
+
+  A.8xyzU
+  B.xyzU
+  C.8xyz
+  D.8xzU
+  E. + + x2y2z2
+
+--------------------------------------------------------------------------------
+
+Question 72:
+If ,thenobtainthevalueof U=ln(+-y-x x3y3x2y2) +2 + Uxx UxyUyy *
+
+  A.-4/(x+y)2
+  B.4/(x+y)2
+  C.-4/(x-y)2
+  D.4/(x-y)2
+  E. /y (x-y)2
+
+--------------------------------------------------------------------------------
+
+Question 73:
+If find f =z (x,y,z) sin-1(y/x)∂f ∂x *
+
+  A.-yz/ -x4x2y2
+  B.yz/ -x4x2y2
+  C.yz/ +x4x2y2
+  D.-yz/ -x4x2y2
+  E.-yz/ +x4x2y2
+
+--------------------------------------------------------------------------------
+
+Question 74:
+if ,find f = (u,v,w)-u2v2 +v2w2∂f ∂v 
+
+  *A.2v / (+v2w2)(+v2w2)2
+  B.-2v / (+v2w2)(+v2w2)2
+  C.-2v / (+v2w2)(-v2w2)2
+  D.-2v / (-v2w2)(+v2w2)2
+  E.2v / (-v2w2)(+v2w2)2
+
+--------------------------------------------------------------------------------
+
+Question 75:
+if ,find f = (u,v,w)-u2v2 +v2w2∂f ∂w *
+
+  A.-2w / (-u2v2)(+v2w2)2
+  B.-2v / (+v2w2)(+v2w2)2
+  C.-2v / (+v2w2)(-v2w2)2
+  D.-2v / (-v2w2)(+v2w2)2
+  E.2v / (-v2w2)(+v2w2)2
+
+--------------------------------------------------------------------------------
+
+Question 76:
+if ,Obtainthevalueof z= +2,x=rcosθ,y=rsinθ x2y2(∂z ∂x)y *
+
+  A.2x
+  B.2y
+  C.2z
+  D.x
+  E.y
+
+--------------------------------------------------------------------------------
+
+Question 77:
+if ,Obtainthevalueof z= +2,x=rcosθ,y=rsinθ x2y2(∂z ∂x)θ 
+
+  A.2x(1-2 θtan2)
+  *B.x(1+2 θtan2)
+  C.2x(1+2 θtan2)
+  D.2x(1+ θtan2)
+  E.2x(2 θtan2)
+
+--------------------------------------------------------------------------------
+
+Question 78:
+If ,find = + +,x=,y=cos3t,z=sin3t x2y2z2e2te2te2t du dt 
+
+  A.8
+  *B.2e2t
+  C.8e2t
+  D.6e2t
+  E.4e2t
+
+--------------------------------------------------------------------------------
+
+Question 79:
+Findthetotaldifferentialcoefficientof withrespecttowhere areconnectedby yx2x x,y +xy+ =1 x2y2 
+
+  A.2xy+(2x+y)/(x+2y) x2
+  *B.2xy-(2x-y)/(x+2y) x2
+  C.2xy-(2x+y)/(x+2y) x2
+  D.2xy-(2x-y)/(x-2y) x2
+  E.2xy+(2x-y)/(x+2y) x2
+
+--------------------------------------------------------------------------------
+
+Question 80:
+Thealtitudeofarightcircularconeis15cmandisincreasingat0.2cm/sec.Theradiusof thebaseis10cmandisdecreasingat0.3cm/sec.howfastisthevolumechanging? *
+
+  A.-70π/3cm2s-1
+  B.70π/3cm2s-1
+  C.-70π/3cm2
+  D.70π/3cm2
+  E.-70πcm2s-1
+
+--------------------------------------------------------------------------------
+
+Question 81:
+Thealtitudeofarightcircularconeis15cmandisincreasingat0.2cm/sec.Theradiusof thebaseis10cmandisdecreasingat0.3cm/sec.Atwhatrateisthevolumedecreasing? *
+
+  A.-70π/3cm2s-1
+  B.70π/3cm2s-1
+  C.-70π/3cm2
+  D.70π/3cm2
+  E.-70πcm2s-1
+
+--------------------------------------------------------------------------------
+
+Question 82:
+If andat find U=tan-1(y x) x=-,y=+ ete-tete-t dy dx 
+
+  A.-2/(-) e2te-2t
+  B.-2/(-) e2te-2t
+  C.2/(-) e2te-2t
+  *D.2/( + ) e2te-2t
+  E.-2/( + ) e2te-2t
+
+--------------------------------------------------------------------------------
+
+Question 83:
+Inotherthatthefunction remainsconstant.whatshouldbetherateofchange U=2xy-3yx2 ofgiventhatincreasesattherateof2cm/sattheinstantwhen and y x x=3cm y=1cm *
+
+  A.-32/21cms-1
+  B.32/21cms-1
+  C.-32/2cms-1
+  D.-32cms-1
+  E.32cms-1
+
+--------------------------------------------------------------------------------
+
+Question 84:
+Findtherateatwhichtheareaofarectangleisincreasingatagiveninstantwhenthesides oftherectangleare4ftand3ftandincreasingattherateof1.5ft/secand0.5ft/secrespectively. 
+
+  A.4sqft/sec
+  B.3sqft/sec
+  *C.12sqft/sec
+  D.6.5sqft/sec
+  E.0.75sqft/sec
+
+--------------------------------------------------------------------------------
+
+Question 85:
+if ,obtain u=-,x=2r-3s+4,y=-r+8s-5 x2y2 du dr 
+
+  A.2r-3s+4
+  *B.-r+8s-5
+  C.2(2x+y)
+  D.(2x+y)
+  E.(2x-y)
+
+--------------------------------------------------------------------------------
+
+Question 86:
+if ,obtain u=-,x=2r-3s+4,y=-r+8s-5 x2y2 du ds 
+
+  A.2r-3s+4
+  *B.-r+8s-5
+  C.-6x-16y
+  D.(2x+y)
+  E.(2x-y)
+
+--------------------------------------------------------------------------------
+
+Question 86:
+If Obtain + =5 x5y5a3x2 yd2 dx2 *
+
+  A.6 / a3x2(+a3x3)y9
+  B.6 / a3x2(-a3x3)y9
+  C.6 / a3(+a3x3)y9
+  D.6 / a3x2(+a3x3)y3
+  E. / a3x2(+a3x3)y9
+
+--------------------------------------------------------------------------------
+
+Question 87:
+Compute at(1,-1,2)if∂z ∂x+ = x2y2+z2a2 
+
+  A.0
+  *B.1
+  C.-1/2
+  D.-1
+  E.2
+
+--------------------------------------------------------------------------------
+
+Question 88:
+Compute at(1,-1,2)if∂z ∂x+ = x2y2+z2a2 
+
+  *A.0
+  B.1
+  C.-1/2
+  D.-1
+  E.2
+
+--------------------------------------------------------------------------------
+
+Question 89:
+If ,find y=2-2x+4x3 yd3 dx3 
+
+  A.24x
+  *B.0
+  C.24
+  D.x
+  E.-24
+
+--------------------------------------------------------------------------------
+
+Question 90:
+ObtaintheStationarypointforthefunctiony= +3-12x+4 2x3x2 *
+
+  A.(1,3),(-2,24)
+  B.(3,1),(-24,2)
+  C.(-1,-3),(-2,24)
+  D.(1,3),(-2,-24)
+  E.(-1,3),(-2,24)
+
+--------------------------------------------------------------------------------
+
+Question 91:
+WhichoftheStationarypointsforthefunction givesthemaximum y= +3-12x+4 2x3x2 
+
+  A.(-1,3)
+  *B.(3,1),
+  C.(-2,24)
+  D.(1,3),
+  E.(-24,2)
+
+--------------------------------------------------------------------------------
+
+Question 92:
+WhichoftheStationarypointsforthefunction givestheminimum y= +3-12x+4 2x3x2 
+
+  A.(-1,3)
+  B.(3,1),
+  *C.(-2,24)
+  D.(1,3),
+  E.(-24,2)
+
+--------------------------------------------------------------------------------
+
+Question 93:
+If find +xy+ =7 x2y4 dy dx *
+
+  A.-(2x+y)/(x+4)y3
+  B.(2x+y)/(x+4)y3
+  C.-(2x+y)/(x+4)y3
+  D.-(2x+y)/4y3
+  E.(2x+3y)/(x+4)y3
+
+--------------------------------------------------------------------------------
+
+Question 94:
+∫xcosxdx= *
+
+  A.xsinx+cosx+c
+  B.sinx+cosx+c
+  C.xsinx+cosx
+  D.xsinx-cosx+c
+  E.xcosx+sinx+c
+
+--------------------------------------------------------------------------------
+
+Question 95:
+∫π 2 0xcosxdx 
+
+  A.0
+  B.2
+  *C.1
+  D.-1π 2
+  E.π 2
+
+--------------------------------------------------------------------------------
+
+Question 96:
+∫xsinxdx= 
+
+  A.xsinx+cosx+c
+  B.sinx+cosx+c
+  C.xsinx+cosx
+  *D.xsinx-cosx+c
+  E.-xcosx+sinx+c
+
+--------------------------------------------------------------------------------
+
+Question 97:
+∫π 2 0xcosxdx 
+
+  A.0
+  *B.2
+  C.1
+  D.-1π 2
+  E.π 2
+
+--------------------------------------------------------------------------------
+
+Question 98:
+Evaluatethelineintegral fromA(0,1)toB(2,3)alongthecurve I=∫c dx+ dy (+2y x2) (x+y2) c,definedby . y=x+1 *
+
+  A.64/3
+  B.64
+  C.32/3
+  D.32
+  E.1/32
+
+--------------------------------------------------------------------------------
+
+Question 99:
+Evaluate fromA(0,1)toB(1,0)alongthecurvecdefinedby .∫c dx (x+2y)y=1-x 
+
+  *A.-1
+  B.1
+  C.0
+  D.2
+  E.-2
+
+--------------------------------------------------------------------------------
+
+Question 100:
+Evaluate fromO(0,0)toA(1,0)alongtheline andfromA(1,0) I=∫c{ dx+xydy (x+y) } y=0 toB(1,1)alongthelinex=1 *
+
+  A.-1
+  B.2
+  C.-2
+  D.0
+  E.1
+
+--------------------------------------------------------------------------------
+
+Question 101:
+Computethepartialderivativeofthefunction with f(x,y,z)= +z e1-xcosye-1/(1+)y2 respecttoatthepoint(1,0,π). x *
+
+  A.-1
+  B.−1/e
+  C.0
+  D.π/e
+  E.π
+
+--------------------------------------------------------------------------------
+
+Question 102:
+Themaximumvalueof ontheellipse occursatapoint( forwhich(xy)6 + =1x2 4y2x,y) isequalto y2 
+
+  *A.√2/3
+  B.1/2
+  C.2/3
+  D.5/11
+  E.10/11
+
+--------------------------------------------------------------------------------
+
+Question 103:
+Thetangentplanetothegraphofthefunction atthepoint(1,1, z=y+1/(1+) x2y2 3/2)containspoint(2,2,t)forwhichvalueoft? 
+
+  A.81 5
+  *B.1+7/4√2
+  C.4
+  D.5
+  E.noneoftheabove
+
+--------------------------------------------------------------------------------
+
+Question 104:
+Whichofthequantitiesisnearesttothevalueof ? exp cos (0.002) (0.003
+
+
+--------------------------------------------------------------------------------
+
+Question 1:
+001) 
+
+  A.1
+  B.1.001
+  *C.1.002
+  D.1.003
+  E.1.000006
+
+--------------------------------------------------------------------------------
+
+Question 105:
+Given is 5 +sinx, e3xdy dx 
+
+  *A.5 +sinx e3x
+  B.15 +cosx e3x
+  C.15 -cosx e3x
+  D.5 -sinx e3x
+  E.ex
+
+--------------------------------------------------------------------------------
+
+Question 106:
+Given at ismostnearly y=sin2x,dy dxx=3 
+
+  A.0.9600
+  *B.0.9945
+  C.1.920
+  D.1.989
+  E.0
+
+--------------------------------------------------------------------------------
+
+Question 107:
+Given is x3lnx,dy dx 
+
+  *A.lnxx3
+  B.3lnxx2
+  C.3lnx+ x2x2
+  D.2x
+  E.3x
+
+--------------------------------------------------------------------------------
+
+Question 108:
+Thevelocityofabodyasafunctionoftimeisgivenas ,wheretisin =5 +4 (t) e-2t seconds,andνisinm/s.Theaccelerationinat t=6.0sis m/s2 *
+
+  A.-3.012
+  B.5.506
+  C.4.147
+  D.-10.00
+
+--------------------------------------------------------------------------------
+
+Question 109:
+If ,then is +2xy= x2y2 dy dx *
+
+  A.x+y/(y-x)
+  B.2x+2y
+  C.(x+1)/y
+  D.–x
+  E.-2
+
+--------------------------------------------------------------------------------
+
+Question 110:
+Findtheminimumdistancefromthepoint(4,2)totheparabola . =8x y2 
+
+  *A.4√3
+  B.2√2
+  C.√3
+  D.2√3
+  E.2
+
+--------------------------------------------------------------------------------
+
+Question 111:
+Atrianglehasvariablesidesx,y,zsubjecttotheconstraintsuchthattheperimeter isfixedto18cm.Whatisthemaximumpossibleareaforthetriangle? *
+
+  A.15.59cm2
+  B.18.71cm2
+  C.17.15cm2
+  D.14.03cm2
+  E.-17.15cm2
+
+--------------------------------------------------------------------------------
+
+Question 112:
+Afarmerhasenoughmoneytobuildonly100metersoffence.Whatarethe dimensionsofthefieldhecanenclosethemaximumarea? *
+
+  A.25mx25m
+  B.15mx35m
+  C.20mx30m
+  D.22.5mx27.5m
+  E.10mx35m
+
+--------------------------------------------------------------------------------
+
+Question 113:
+Findtheminimumamountoftinsheetthatcanbemadeintoaclosedcylinder havingavolumeof108cu.inchesinsquareinches. *
+
+  A.125.50
+  B.127.50
+  C.129.50
+  D.123.50
+  E.250.50
+
+--------------------------------------------------------------------------------
+
+Question 114:
+Findthederivativeofthefunctionf =sinxcosx (x) 
+
+  *A. xcosx sin2
+  B. x- x cos2sin2
+  C. x+ x cos2sin2
+  D. x- x -cos2sin2
+  E. x+ x -cos2sin2
+
+--------------------------------------------------------------------------------
+
+Question 115:
+Evaluatelim x→∞5x+4 +2x-1 x2 
+
+  A.-∞
+  *B.0
+  C.1
+  D.5
+  E.-∞
+
+--------------------------------------------------------------------------------
+
+Question 116:
+Thecostfuelinrunningalocomotiveisproportionaltothesquareofthespeed andis$25perhourforaspeedof25milesperhour.Othercostsamountto$100per hour,regardlessofthespeed.Whatisthespeedwhichwillmakethecostpermilea minimum? 
+
+  A.40mph
+  *B.55mph
+  C.50mph
+  D.45mph
+
+--------------------------------------------------------------------------------
+
+Question 117:
+If ,find f =(x) x f11(4) 
+
+  *A.-1/2
+  B.-1/32
+  C.0
+  D.1/8
+  E.2
+
+--------------------------------------------------------------------------------
+
+Question 118:
+Thecoordinates(x,y)infeetofamovingparticleParegivenbyx=cost–1andy =2sint–1,wheretisthetimeinseconds.AtwhatextremeratesinfpsisPmoving alongthecurve? 
+
+  A.3and2
+  B.3and1
+  *C.2and0.5
+  D.2and1
+  E.3and1
+
+--------------------------------------------------------------------------------
+
+Question 119:
+findthecriticalnumbersofy=4-x3x4 
+
+  A.0
+  *B.2
+  C.0and3
+  D.0and4
+  E.Nocriticalnumber
+
+--------------------------------------------------------------------------------
+
+Question 120:
+Theslopeofthetangenttothecurve atthepoint(1,2)is y= +5 x3 
+
+  A.6
+  B.2
+  *C.5
+  D.3
+  E.Noneoftheabove
+
+--------------------------------------------------------------------------------
+
+Question 121:
+Waterispouringintoaswimmingpool.Afterthours,therearet+√tgallonsinthe pool.Atwhatrateisthewaterpouringintothepoolwhent=9hours? *
+
+  A.7/6gph
+  B.8/7gph
+  C.6/5gph
+  D.5/4gph
+  E.1/5gph
+
+--------------------------------------------------------------------------------
+
+Question 121:
+AballoonisrisingverticallyoverapointAonthegroundattherateof15ft./sec.A pointBonthegroundlevelwithand30ft.from
+
+  A.Whentheballoonis40ft.fromA,at whatrateisitsdistancefromBchanging?
+  A.13ft/sec
+  *B.15ft/sec
+  C.12ft/sec
+  D.10ft/sec
+  E.23ft/sec
+
+--------------------------------------------------------------------------------
+
+Question 122:
+Thefunction isincreasingontheintervals f(x)= -6 x4x2 
+
+  A.(0,√3)only
+  B.(−∞,−√3)and(0,√3)only
+  *C.(√3,∞)only
+  D.(−√3,0)and(√3,∞)only
+  E.Noneoftheabove
+
+--------------------------------------------------------------------------------
+
+Question 123:
+Thefunction isconcavedownontheintervals f(x)= -6x4x2 *
+
+  A.(−1,1)only
+  B.(−√3,√3)only
+  C.(−∞,−1)and(1,∞)only
+  D.(1,√3)only
+  E.Noneoftheabove
+
+--------------------------------------------------------------------------------
+
+Question 124:
+Thelinearapproximationofatx=1is5-x *
+
+  A.y=−1/4x+9/4
+  B.y=−3/4x+7/4
+  C.y=1/4x+7/4
+  D.y=−3/4x+9/4
+  E.y=1/4x-7/4
+
+--------------------------------------------------------------------------------
+
+Question 125:
+CarAmovesdueEastat30kphatthesameinstantcarBismovingS30°E,witha speedof60kph.ThedistancefromAtoBis30km.Findhowfastisthedistance betweenthemseparatingafteronehour. 
+
+  A.36kph
+  B.38kph
+  *C.40kph
+  D.45kph
+  E.38kph
+
+--------------------------------------------------------------------------------
+
+Question 126:
+Afunctionisgivenbelow,whatxvaluemaximizesy? +y+-2x=5 y2x2 
+
+  A.2.23
+  B.-1
+  *C.5
+  D.1
+  E.5
+
+--------------------------------------------------------------------------------
+
+Question 127:
+ThenumberofnewspapercopiesdistributedisgivenbyC=50-200t+10000 t2 wheretisinyears.Findtheminimumnumberofcopiesdistributedfrom1995to2002. 
+
+  *A.9850
+  B.9800
+  C.10200
+  D.7500
+  E.9500
+
+--------------------------------------------------------------------------------
+
+Question 128:
+ThecostCofaproductisafunctionofthequantityxoftheproductisgivenbythe relation: .Findthequantityforwhichthecostisaminimum. C =-4000x+50 (x)x2 
+
+  *A.3000
+  B.2000
+  C.1000
+  D.1500
+  E.2500
+
+--------------------------------------------------------------------------------
+
+Question 129:
+Arectangularfieldistobefencedintofourequalparts.Whatisthesizeofthe largestfieldthatcanbefencedthiswaywithafencinglengthof1500feetifthedivision istobeparalleltooneside? 
+
+  *A.65,200
+  B.62,500
+  C.64,500
+  D.63,500
+  E.65,500
+
+--------------------------------------------------------------------------------
+
+Question 130:
+Thefunctionisgivenby .Onwhichofthefollowingintervalsis f f = +4 (x)x4x3f decreasing? 
+
+  A.(-3,0)
+  *B.(0,∞)
+  C.(-3,∞)
+  D.(-∞,-3)
+  E.(-∞,0)
+
+--------------------------------------------------------------------------------
+
+Question 131:
+Thevalueofthatsatisfiesthemeanvaluetheoremontheinterval[0,5]forthe c function is f =-6x (x)x3 
+
+  A.-5/3
+  B.0
+  C.1
+  *D.5/3
+  E.-5/3
+
+--------------------------------------------------------------------------------
+
+Question 132:
+Thegraphofthefunction hasarelativemaximumat y= +12 +15x+3 x3x2x= 
+
+  A.-10.613
+  *B.-0.248
+  C.-7.317
+  D.-1.138
+  E.-0.683
+
+--------------------------------------------------------------------------------
+
+Question 133:
+If ,obtainthederivative + =3c x3y3x2 dy dx *
+
+  A.(2cx-)/x2y2
+  B.2cx+/x2y2
+  C.2cx-/x2y2
+  D.2cx+/x2y2
+  E.2cx-x2
+
+--------------------------------------------------------------------------------
+
+Question 134:
+if .Obtainthevalueof at(0,1,2) +xy-u=6 u3y2 y∂2 ∂x2 
+
+  *A.¼
+  B.-1/11
+  C.6
+  D.1
+  E.2
+
+--------------------------------------------------------------------------------
+
+Question 135:
+Findtheareaofthesurfacegeneratedbyrevolvingthecurvewithparametricequations , x =3t (u) (u-2)y =8(u)u3 2 *
+
+  A.39π
+  B.-39π
+  C.8π
+  D.3π
+  E.39/2π
+
+--------------------------------------------------------------------------------
+
+Question 136:
+Evaluate ,whereDisboundedby∬D dudv (+u2v2)v=u,=4u v2 
+
+  A.384/35
+  B.768/35
+  *C.-384/35
+  D.768/35
+  E.Noneoftheabove
+
+--------------------------------------------------------------------------------
+
+Question 137:
+Findthederivativeofthefunctionf =sinucosu (u) 
+
+  *A. ucosu sin2
+  B. u- u cos2sin2
+  C. u+ u cos2sin2
+  D. u- u -cos2sin2
+  E. u+ u -cos2sin2
+
+--------------------------------------------------------------------------------
+
+Question 138:
+Evaluatelim u→∞5u+4 +2u-1 u2 
+
+  A.-∞
+  *B.0
+  C.1
+  D.5
+  E.-∞
+
+--------------------------------------------------------------------------------
+
+Question 139:
+Evaluate∫π 2 0 udu sin7 
+
+  A.6/7
+  B.4/5
+  C.2/3
+  *D.3/8
+  E.16/35
+
+--------------------------------------------------------------------------------
+
+Question 140:
+Obtainthederivativeofy=cos eax(mx+c) *
+
+  A. [acos -msin ] eax(mx+c) (mx+c)
+  B. cos eax(mx+c)
+  C.acos(mx+c)
+  D.-msin(mx+c)
+  E.-acos(mx+c)
+
+--------------------------------------------------------------------------------
+
+Question 141:
+Giventhat ,obtain y=sinu u2 dy du 
+
+  A.cosu u2
+  B.cosu
+  *C.sinu
+  D.cosu+2usinu u2
+  E.cosu-2usinu u2
+
+--------------------------------------------------------------------------------
+
+Question 142:
+Obtainthederivativeof at y= lnv vn-1v=1/2 
+
+  A. lnv vn-1
+  *B. ln2v vn-1
+  C. lnv+ (n-1)vn-2vn-2
+  D. lnv+ (n-1)vn-2(n-1)vn-2
+  E. lnv+ (n-1)vn-1(n-1)vn-2
+
+--------------------------------------------------------------------------------
+
+Question 143:
+Giventhat in(1,5).Obtainthevalueofcwhichsatisfiesthemeanvaluetheorem f =(r)r2 
+
+  *A.2
+  B.3
+  C.-1
+  D.1
+  E.0
+
+--------------------------------------------------------------------------------
+
+Question 144:
+Astatue3mhighisstandingonabaseof4mhigh.Ifanobserver’seyeis1.5m abovetheground,howfarshouldhestandfromthebaseinorderthattheangle subtendedbythestatueisamaximum? 
+
+  A.3.41m
+  *B.3.51m
+  C.3.71m
+  D.4.41m
+  E.4.43
+
+--------------------------------------------------------------------------------
+
+Question 145:
+Anironbar20mlongisbenttoformaclosedplanearea.Whatisthelargestarea possible? 
+
+  A.21.56squaremeter
+  B.25.68squaremeter
+  *C.28.56squaremeter
+  D.31.83squaremeter
+  E.22.56squaremeter
+
+--------------------------------------------------------------------------------
+
+Question 146:
+If ,find f = (m) m f11(4) 
+
+  *A.-1/2
+  B.-1/32
+  C.0
+  D.1/8
+  E.2
+
+--------------------------------------------------------------------------------
+
+Question 147:
+If withintheinterval .Obtainthevalueofcwhichsatisfiesthemeanvalue f =lnx (x)(,u2u3) theorem. *
+
+  A.(u-1)u2
+  B.(u-1)
+  C.(u-2)
+  D.2(u-1)
+  E.u2
+
+--------------------------------------------------------------------------------
+
