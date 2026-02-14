@@ -116,8 +116,7 @@ const COS201_QUESTIONS = [
         options: ["*/", "//", "*/", "**"],
         correct: 0,
         topic: "C Syntax",
-        explanation: "Multi-line comments use /* to start and */ to end. Everything between is ignored by the compiler. Example: /* This is a
-multi-line comment */. Single-line comments use //."
+        explanation: "Multi-line comments use /* to start and */ to end. Everything between is ignored by the compiler. Example: /* This is a multi-line comment */. Single-line comments use //."
     },
     {
         question: "The step where library functions are combined with object code to create an executable is called:",
