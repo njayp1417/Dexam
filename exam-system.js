@@ -8,6 +8,19 @@ class ExamSystem {
         this.timeRemaining = 25 * 60;
         this.timerInterval = null;
         this.startTime = null;
+        this.selectedCourse = null;
+        this.courseData = {
+            'DTS201': {
+                title: 'DTS201',
+                subtitle: 'Introduction to Data Science',
+                questions: typeof DTS201_QUESTIONS !== 'undefined' ? DTS201_QUESTIONS : []
+            },
+            'COS201': {
+                title: 'COS201',
+                subtitle: 'Computer Programming I',
+                questions: typeof COS201_QUESTIONS !== 'undefined' ? COS201_QUESTIONS : []
+            }
+        };
         
         this.init();
     }
@@ -17,6 +30,13 @@ class ExamSystem {
     }
     
     setupEventListeners() {
+        // Course selection
+        document.querySelectorAll('.course-card').forEach(card => {
+            card.addEventListener('click', () => {
+                this.selectCourse(card.dataset.course);
+            });
+        });
+        
         document.getElementById('registrationForm').addEventListener('submit', (e) => {
             e.preventDefault();
             this.startExam();
@@ -28,6 +48,16 @@ class ExamSystem {
         document.getElementById('retakeBtn').addEventListener('click', () => this.retakeExam());
     }
     
+    selectCourse(courseCode) {
+        this.selectedCourse = courseCode;
+        const course = this.courseData[courseCode];
+        
+        document.getElementById('courseTitle').textContent = course.title;
+        document.getElementById('courseSubtitle').textContent = course.subtitle;
+        
+        this.showScreen('registrationScreen');
+    }
+    
     startExam() {
         this.studentName = document.getElementById('studentName').value.trim();
         this.matricNumber = document.getElementById('matricNumber').value.trim();
@@ -37,7 +67,13 @@ class ExamSystem {
             return;
         }
         
-        this.examQuestions = this.selectRandomQuestions(COS201_QUESTIONS, 50);
+        if (!this.selectedCourse) {
+            alert('Please select a course first');
+            return;
+        }
+        
+        const courseQuestions = this.courseData[this.selectedCourse].questions;
+        this.examQuestions = this.selectRandomQuestions(courseQuestions, 50);
         this.userAnswers = new Array(50).fill(null);
         this.startTime = new Date();
         
@@ -374,8 +410,9 @@ class ExamSystem {
             this.userAnswers = [];
             this.timeRemaining = 25 * 60;
             this.examQuestions = [];
+            this.selectedCourse = null;
             
-            this.showScreen('registrationScreen');
+            this.showScreen('courseSelectionScreen');
             document.getElementById('registrationForm').reset();
         }
     }

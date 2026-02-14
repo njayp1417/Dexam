@@ -3,16 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COS201 CBT Exam System</title>
+    <title>CBT Exam System</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Registration Screen -->
-    <div id="registrationScreen" class="screen active">
+    <!-- Course Selection Screen -->
+    <div id="courseSelectionScreen" class="screen active">
         <div class="container">
             <div class="header">
-                <h1>COS201</h1>
-                <p class="subtitle">Computer Programming I</p>
+                <h1>CBT Exam System</h1>
+                <p class="subtitle">Select Your Course</p>
+                <p class="course-info">Choose a course to begin practice</p>
+            </div>
+            
+            <div class="course-grid">
+                <div class="course-card" data-course="DTS201">
+                    <h2>DTS201</h2>
+                    <p>Introduction to Data Science</p>
+                    <div class="course-stats">
+                        <span>320 Questions</span>
+                        <span>50 per exam</span>
+                    </div>
+                </div>
+                
+                <div class="course-card" data-course="COS201">
+                    <h2>COS201</h2>
+                    <p>Computer Programming I</p>
+                    <div class="course-stats">
+                        <span>60 Questions</span>
+                        <span>50 per exam</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Screen -->
+    <div id="registrationScreen" class="screen">
+        <div class="container">
+            <div class="header">
+                <h1 id="courseTitle">Course</h1>
+                <p class="subtitle" id="courseSubtitle">Course Description</p>
                 <p class="course-info">Computer-Based Test</p>
             </div>
             
@@ -137,6 +168,7 @@
         </div>
     </div>
 
+    <script src="DTS201_QUESTIONS_DATABASE.js"></script>
     <script src="COS201_QUESTIONS_DATABASE.js"></script>
     <script src="exam-system.js"></script>
 </body>
