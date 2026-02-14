@@ -95,7 +95,7 @@ const COS201_QUESTIONS = [
         options: ["Tab", "Null character", "Newline", "Backspace"],
         correct: 2,
         topic: "C Syntax",
-        explanation: "This is the correct answer for this c syntax question."
+        explanation: "\\n is the newline escape sequence (ASCII 10). It moves the cursor to the beginning of the next line. In printf('Hello\\nWorld'), it prints 'Hello' then moves to a new line before 'World'. Other escape sequences: \\t (tab), \\0 (null), \\r (carriage return), \\b (backspace)."
     },
     {
         question: "Which tool converts C source code into machine language (binary)?",
@@ -463,18 +463,18 @@ multi-line comment */. Single-line comments use //."
         explanation: "GCC (GNU Compiler Collection) is maintained by the GNU Project (Free Software Foundation). It's free, open-source, and supports C, C++, and other languages. It's the default compiler on Linux."
     },
     {
-        question: "The sizeof operator returns:",
-        options: ["Data type", "Memory address", "Value of variable", "Size in bytes"],
-        correct: 3,
+        question: "What does the sizeof operator return, and when is it evaluated?",
+        options: ["Runtime size in bits", "Compile-time size in bytes", "Memory address of operand", "Number of elements in array"],
+        correct: 1,
         topic: "Operators",
-        explanation: "sizeof returns the size in bytes of a type or variable. Example: sizeof(int) typically returns 4. Useful for memory allocation: malloc(n * sizeof(int)). It's evaluated at compile time."
+        explanation: "sizeof returns the size in bytes of a type or expression, evaluated at compile-time (except VLAs in C99). Example: sizeof(int) typically returns 4. sizeof is an operator, not a function - parentheses are optional for variables: sizeof x. Critical for portable code: malloc(n * sizeof(int)) works regardless of int's size. For arrays: sizeof(arr) gives total bytes, sizeof(arr)/sizeof(arr[0]) gives element count. Note: sizeof(pointer) gives pointer size (4 or 8 bytes), not pointed-to data size."
     },
     {
-        question: "What is the size of char in C?",
-        options: ["1 byte", "4 bytes", "2 bytes", "Depends on compiler"],
+        question: "According to the C standard, what is the guaranteed size of char?",
+        options: ["Exactly 1 byte (CHAR_BIT bits, minimum 8)", "Always 8 bits", "Platform-dependent, typically 2 bytes", "16 bits on all systems"],
         correct: 0,
         topic: "Data Types",
-        explanation: "char is always 1 byte (8 bits) by definition. It can store values 0-255 (unsigned) or -128 to 127 (signed). It's used for characters (ASCII) and small integers."
+        explanation: "The C standard defines char as exactly 1 byte, where a byte is CHAR_BIT bits (minimum 8, typically 8). This is the only type with guaranteed size. sizeof(char) always equals 1 by definition. On most systems, 1 byte = 8 bits, but some DSPs use 16 or 32-bit bytes. Use limits.h to check CHAR_BIT value."
     },
     {
         question: "Which keyword is used to define constants?",
@@ -484,11 +484,11 @@ multi-line comment */. Single-line comments use //."
         explanation: "const declares variables whose values can't be changed after initialization. Example: const int MAX = 100; Attempting to modify MAX causes a compiler error. Use const for values that shouldn't change."
     },
     {
-        question: "What is the range of unsigned char?",
-        options: ["-128 to 127", "0 to 255", "0 to 127", "-255 to 255"],
+        question: "What is the guaranteed range of unsigned char on a system with 8-bit bytes?",
+        options: ["-128 to 127", "0 to 255 (0 to 2^CHAR_BIT - 1)", "0 to 127", "-255 to 255"],
         correct: 1,
         topic: "Data Types",
-        explanation: "unsigned char stores 0 to 255 (8 bits, all positive). Regular char can be -128 to 127 (signed) or 0-255 (unsigned, implementation-dependent). Use unsigned when you need only positive values."
+        explanation: "unsigned char ranges from 0 to UCHAR_MAX (255 on 8-bit systems, or 2^CHAR_BIT - 1 generally). It uses all bits for magnitude with no sign bit. Plain 'char' signedness is implementation-defined - it may be signed (-128 to 127) or unsigned (0 to 255). Use 'signed char' or 'unsigned char' for guaranteed behavior. Check limits.h for UCHAR_MAX, SCHAR_MIN, SCHAR_MAX."
     },
     {
         question: "Which storage class has the longest lifetime?",
@@ -505,11 +505,11 @@ multi-line comment */. Single-line comments use //."
         explanation: "register hints the compiler to store the variable in a CPU register for faster access. Example: register int i; Modern compilers often ignore this and optimize automatically. Can't take address of register variables."
     },
     {
-        question: "What is type casting?",
-        options: ["Converting one data type to another", "Deleting variables", "Copying variables", "Creating new types"],
-        correct: 0,
+        question: "What is explicit type casting in C, and how does it differ from implicit conversion?",
+        options: ["Automatic type promotion by compiler", "Explicit conversion using cast operator: (type)expression", "Deleting and recreating variables", "Creating new typedef aliases"],
+        correct: 1,
         topic: "Data Types",
-        explanation: "Type casting converts a value from one type to another. Example: (int)3.7 converts float to int, giving 3. Syntax: (target_type)value. Useful for avoiding precision loss warnings and controlling conversions."
+        explanation: "Explicit casting uses cast operator: (target_type)expression. Example: (int)3.7 truncates to 3. Implicit conversion (coercion) happens automatically: int x = 3.7; (compiler converts). Casting is crucial for: 1) Avoiding precision loss warnings, 2) Pointer conversions: (char*)ptr, 3) Controlling arithmetic: (double)a/b for floating division. Casting doesn't change the original value, only the expression result. Beware: casting can cause data loss (float to int) or undefined behavior (incompatible pointer casts)."
     },
     {
         question: "Which is the correct way to declare a pointer?",
@@ -519,11 +519,11 @@ multi-line comment */. Single-line comments use //."
         explanation: "int *ptr; declares a pointer to int. The * indicates it's a pointer. ptr stores a memory address, not a value. Initialize: int *ptr = &variable; to point to variable's address."
     },
     {
-        question: "What is the result of 5 / 2 in C?",
-        options: ["2.0", "2", "3", "2.5"],
+        question: "What is the result of the expression 5 / 2 when both operands are integers in C?",
+        options: ["2.0", "2 (integer division with truncation toward zero)", "3 (rounded up)", "2.5"],
         correct: 1,
         topic: "Operators",
-        explanation: "Integer division truncates decimals. 5 / 2 = 2 (not 2.5) because both operands are integers. For decimal result, use: 5.0 / 2 or (float)5 / 2. This is a common source of bugs."
+        explanation: "Integer division performs truncation toward zero, discarding the fractional part. 5 / 2 yields 2, not 2.5, because both operands are int. The result type is determined by operand types (integer promotion rules). To get 2.5: use 5.0 / 2 (makes it floating-point division) or (double)5 / 2 (explicit cast). Note: -5 / 2 = -2 (truncates toward zero, not floor division)."
     },
     {
         question: "The ++ operator is called:",
@@ -547,25 +547,25 @@ multi-line comment */. Single-line comments use //."
         explanation: "Ternary operator: condition ? value_if_true : value_if_false. Example: int max = (a > b) ? a : b; assigns larger value to max. It's a compact if-else for simple conditions."
     },
     {
-        question: "What is the precedence of * compared to +?",
-        options: ["Undefined", "Higher", "Lower", "Same"],
+        question: "What is the operator precedence relationship between * (multiplication) and + (addition) in C?",
+        options: ["Implementation-defined", "* has higher precedence (evaluated first)", "+ has higher precedence", "Equal precedence, left-to-right"],
         correct: 1,
         topic: "Operators",
-        explanation: "* (multiplication) has higher precedence than + (addition). So 2 + 3 * 4 = 2 + 12 = 14, not 20. Use parentheses to override: (2 + 3) * 4 = 20. Precedence rules prevent ambiguity."
+        explanation: "Multiplicative operators (*, /, %) have higher precedence than additive operators (+, -). Expression 2 + 3 * 4 evaluates as 2 + (3 * 4) = 14, not (2 + 3) * 4 = 20. Precedence hierarchy (high to low): 1) Postfix (++, --), 2) Unary (!, -, ++, --), 3) Multiplicative (*, /, %), 4) Additive (+, -), 5) Relational (<, >), 6) Equality (==, !=), 7) Logical AND (&&), 8) Logical OR (||), 9) Assignment (=). Use parentheses for clarity and to override precedence. Associativity matters when operators have equal precedence."
     },
     {
-        question: "The comma operator evaluates:",
-        options: ["Average of expressions", "All expressions, returns last", "Last expression only", "First expression only"],
+        question: "How does the comma operator work in C expressions?",
+        options: ["Calculates arithmetic mean of operands", "Evaluates left-to-right, returns rightmost value", "Evaluates only the last expression", "Returns first non-zero expression"],
         correct: 1,
         topic: "Operators",
-        explanation: "Comma operator evaluates expressions left-to-right and returns the last one. Example: x = (a=1, b=2, a+b); sets a=1, b=2, then x=3. Rarely used except in for loops: for(i=0, j=10; i<j; i++, j--)."
+        explanation: "The comma operator (,) evaluates expressions left-to-right, discarding all but the last result. Syntax: expr1, expr2, expr3 evaluates all, returns expr3's value. Example: x = (a=1, b=2, a+b); executes a=1, then b=2, then a+b, assigning 3 to x. Parentheses required to distinguish from function argument separator. Common use: for loops: for(i=0, j=n-1; i<j; i++, j--). Has lowest precedence. Side effects in all expressions occur. Rarely used outside loops due to readability concerns. Don't confuse with comma separator in declarations: int a, b; (not comma operator)."
     },
     {
-        question: "What does the expression !0 evaluate to?",
-        options: ["0", "1", "false", "Error"],
+        question: "What does the logical NOT expression !0 evaluate to in C?",
+        options: ["0 (false)", "1 (true)", "Undefined behavior", "Compilation error"],
         correct: 1,
         topic: "Operators",
-        explanation: "In C, 0 is false and any non-zero is true. ! (NOT) negates: !0 = 1 (true), !1 = 0 (false), !42 = 0 (false). Useful in conditions: if(!error) means 'if no error'."
+        explanation: "!0 evaluates to 1. In C, logical operators return int: 0 for false, 1 for true. The ! operator performs logical negation: !0 = 1, !(any non-zero) = 0. Examples: !5 = 0, !-3 = 0, !!5 = 1 (double negation normalizes to 0 or 1). This differs from bitwise NOT (~): ~0 = -1 (all bits flipped). Common idiom: if(!ptr) checks for NULL pointer. C99 added _Bool type, but logical operators still return int for backward compatibility."
     },
     {
         question: "What is the difference between while and do-while?",
@@ -603,11 +603,11 @@ multi-line comment */. Single-line comments use //."
         explanation: "switch only works with integer types (int, char, enum). It can't handle float or double because floating-point comparison is imprecise. For float comparisons, use if-else chains."
     },
     {
-        question: "What is recursion?",
-        options: ["Error handling", "Multiple functions", "Function calling itself", "Loop"],
+        question: "What is recursion in C, and what are its essential components?",
+        options: ["Exception handling mechanism", "Multiple function definitions", "Function calling itself with base case and recursive case", "Iterative loop construct"],
         correct: 2,
         topic: "Functions",
-        explanation: "Recursion is when a function calls itself. Example: factorial(n) = n * factorial(n-1). Must have base case to stop: if(n==0) return 1; Without base case, infinite recursion causes stack overflow."
+        explanation: "Recursion occurs when a function calls itself, requiring: 1) Base case (termination condition), 2) Recursive case (self-call with modified parameters), 3) Progress toward base case. Example: int factorial(int n) { if(n <= 1) return 1; return n * factorial(n-1); }. Each call creates a new stack frame. Without proper base case, stack overflow occurs. Recursion trades stack space for elegant solutions to problems like tree traversal, divide-and-conquer algorithms. Tail recursion (recursive call as last operation) can be optimized by compilers into iteration."
     },
     {
         question: "What is the purpose of function parameters?",
@@ -624,11 +624,11 @@ multi-line comment */. Single-line comments use //."
         explanation: "Call by value copies argument values to parameters - changes don't affect originals. Call by reference (using pointers) passes addresses - changes affect originals. Example: void swap(int *a, int *b) uses pointers for reference."
     },
     {
-        question: "Can a function return multiple values directly?",
-        options: ["Only in C99", "No, but can use pointers or structures", "Yes", "Only integers"],
+        question: "How can a C function return multiple values to the caller?",
+        options: ["Direct multiple return syntax: return (a, b, c);", "Output parameters via pointers, or return struct", "Only possible with C11 standard", "Automatic through pass-by-reference"],
         correct: 1,
         topic: "Functions",
-        explanation: "C functions return one value. For multiple values, use: 1) pointers to modify multiple variables, 2) structures to bundle values, or 3) global variables (not recommended). Example: void getMinMax(int arr[], int *min, int *max)."
+        explanation: "C functions return one value via return statement. For multiple values: 1) Output parameters: void getMinMax(int arr[], int *min, int *max) - pass pointers to modify caller's variables. 2) Return struct: struct Result { int min, max; }; struct Result getMinMax(int arr[]). 3) Static/global variables (poor practice - not thread-safe). 4) Dynamic allocation (caller must free). Pointers enable 'pass-by-reference' semantics in C's pass-by-value model. Modern C prefers structs for clarity and type safety."
     },
     {
         question: "What is a static function?",
@@ -638,53 +638,53 @@ multi-line comment */. Single-line comments use //."
         explanation: "static functions are visible only in their source file (internal linkage). They can't be called from other files. Useful for helper functions that shouldn't be exposed. Example: static int helper() { }"
     },
     {
-        question: "What is an inline function?",
-        options: ["Recursive function", "Function expanded at call site", "Function inside another", "External function"],
+        question: "What is the purpose of the inline keyword in C99/C11?",
+        options: ["Forces recursive function optimization", "Suggests compiler to expand function at call site (inline expansion)", "Declares nested function definition", "Marks function for external linkage"],
         correct: 1,
         topic: "Functions",
-        explanation: "inline suggests the compiler expand function code at call site instead of calling it. Reduces function call overhead for small functions. Example: inline int square(int x) { return x*x; } Compiler may ignore the hint."
+        explanation: "inline (C99) suggests the compiler perform inline expansion - replacing function calls with the function body to eliminate call overhead. Example: inline int square(int x) { return x*x; }. Benefits: eliminates call/return overhead, enables further optimizations. Tradeoffs: increases code size (code bloat), compiler may ignore hint. Best for small, frequently-called functions. Unlike macros, inline functions provide type safety and debugging. Compiler optimizations often inline functions automatically without the keyword. Note: inline has complex linkage rules - typically use static inline in headers."
     },
     {
-        question: "What is the null character in C?",
-        options: ["\n", "\0", "0", "NULL"],
+        question: "What is the null character (\\0) in C, and why is it critical for string handling?",
+        options: ["Newline character for output", "String terminator (ASCII/Unicode 0) marking end of C-strings", "Integer zero value", "NULL pointer constant"],
         correct: 1,
         topic: "Arrays",
-        explanation: "\0 (null character, ASCII 0) marks string end. Example: 'Hi' is stored as {'H','i','\0'}. String functions like strlen() count characters until \0. Without \0, functions don't know where string ends."
+        explanation: "\\0 is the null character (value 0, not character '0' which is ASCII 48). It terminates C-strings, enabling functions to find string length. Example: \"Hi\" is stored as {'H','i','\\0'} (3 bytes). String functions (strlen, strcpy, strcmp) iterate until \\0. Missing null terminator causes buffer overruns and undefined behavior. String literals automatically include \\0. Always allocate n+1 bytes for n-character strings. Don't confuse: \\0 (null char), 0 (integer), '0' (character 48), NULL (pointer). Writing past array bounds without \\0 is a common security vulnerability."
     },
     {
-        question: "How is a string stored in C?",
-        options: ["As pointer only", "As character array with \0", "As string type", "As integer array"],
+        question: "How are strings represented in C at the implementation level?",
+        options: ["As a primitive string type with length prefix", "As null-terminated character arrays (C-strings)", "As Pascal-style length-prefixed strings", "As Unicode string objects"],
         correct: 1,
         topic: "Arrays",
-        explanation: "Strings are character arrays ending with \0. Example: char name[] = 'John'; creates {'J','o','h','n','\0'} - 5 bytes for 4 letters. Always allocate space for \0: char str[10]; holds 9 characters + \0."
+        explanation: "C uses null-terminated strings (C-strings): character arrays ending with '\0' (ASCII 0). Example: char name[] = \"John\"; allocates {'J','o','h','n','\0'} - 5 bytes. The null terminator enables functions like strlen() to find the end. String literals are stored in read-only memory. Always allocate n+1 bytes for n characters. This differs from Pascal strings (length prefix) and modern languages (string objects with metadata)."
     },
     {
-        question: "What does strlen() return?",
-        options: ["String length including \0", "Array size", "Memory address", "String length excluding \0"],
+        question: "What does strlen() return, and how does it differ from sizeof for strings?",
+        options: ["String length including null terminator", "Total array size in bytes", "Pointer address", "String length excluding null terminator (runtime count)"],
         correct: 3,
         topic: "Arrays",
-        explanation: "strlen() counts characters before \0, excluding \0 itself. Example: strlen('Hello') returns 5, not 6. Don't confuse with sizeof: sizeof('Hello') returns 6 (includes \0). strlen() is in <string.h>."
+        explanation: "strlen() returns the number of characters before '\\0', excluding the null terminator. It counts at runtime by iterating until \\0. Example: strlen(\"Hello\") returns 5. Contrast with sizeof: sizeof(\"Hello\") returns 6 (compile-time, includes \\0). For char str[10] = \"Hi\": strlen(str) = 2 (runtime), sizeof(str) = 10 (array size). strlen() has O(n) complexity. For char *ptr = \"Hi\": sizeof(ptr) gives pointer size (4 or 8 bytes), not string length. Always use strlen() for string length, sizeof() for buffer size. Declared in <string.h>."
     },
     {
-        question: "How do you declare a 2D array with 3 rows and 4 columns?",
-        options: ["int arr(3,4)", "int arr[3,4],
+        question: "What is the correct syntax to declare a 2D array with 3 rows and 4 columns in C?",
+        options: ["int arr(3,4);", "int arr[3,4];", "int arr[3][4];", "int arr[4][3];"],
         correct: 2,
         topic: "Arrays",
-        explanation: "int arr[3][4]; creates 3 rows, 4 columns (12 elements total). Access: arr[row][col]. Memory layout is row-major: arr[0][0], arr[0][1], ..., arr[0][3], arr[1][0], etc."
+        explanation: "int arr[3][4]; declares a 2D array with 3 rows and 4 columns (12 elements total). C uses row-major order: elements are stored row-by-row in contiguous memory. arr[0][0], arr[0][1], arr[0][2], arr[0][3], arr[1][0]... Access element at row i, column j: arr[i][j]. In memory, arr[i][j] is at address: base + (i * 4 + j) * sizeof(int). The first dimension can be omitted in function parameters: void func(int arr[][4])."
     },
     {
-        question: "What is the relationship between arrays and pointers?",
-        options: ["No relationship", "Array name is a pointer to first element", "Arrays are faster", "Pointers are arrays"],
+        question: "What is the relationship between arrays and pointers in C?",
+        options: ["Arrays and pointers are completely unrelated", "Array name decays to pointer to first element in most contexts", "Arrays are always faster than pointers", "Pointers and arrays are identical types"],
         correct: 1,
         topic: "Pointers",
-        explanation: "Array name is a constant pointer to first element. arr is equivalent to &arr[0]. arr[i] is *(arr+i). You can use pointer arithmetic on arrays: *(arr+2) accesses arr[2]."
+        explanation: "Array names decay to pointers to their first element in most contexts (except with sizeof and &). For int arr[10]: arr is equivalent to &arr[0]. Array subscripting arr[i] is syntactic sugar for *(arr+i). Pointer arithmetic: arr+2 points to arr[2]. Key differences: 1) sizeof(arr) gives array size, sizeof(ptr) gives pointer size. 2) &arr gives pointer to entire array (type int(*)[10]), &ptr gives pointer to pointer. 3) Arrays are not modifiable lvalues (can't do arr++), pointers are. This decay enables passing arrays to functions as pointers."
     },
     {
-        question: "Which function copies strings?",
-        options: ["strdup()", "strcopy()", "strcpy()", "copy()"],
+        question: "Which standard library function copies strings, and what are its safety considerations?",
+        options: ["strdup() (POSIX, allocates memory)", "strcopy() (non-standard)", "strcpy() (unsafe without bounds checking)", "memcpy() (for any data)"],
         correct: 2,
         topic: "Arrays",
-        explanation: "strcpy(dest, src) copies src string to dest, including \0. Example: strcpy(name, 'John'); Danger: if dest is too small, buffer overflow occurs. Safer: strncpy(dest, src, n) copies at most n characters."
+        explanation: "strcpy(dest, src) copies src to dest including '\\0'. Syntax: char *strcpy(char *dest, const char *src). Critical danger: no bounds checking - if dest is too small, buffer overflow occurs (security vulnerability). Safer alternatives: 1) strncpy(dest, src, n) - copies at most n chars but may not null-terminate. 2) snprintf(dest, size, \"%s\", src) - guarantees null termination. 3) strcpy_s() (C11 Annex K). Best practice: always ensure dest has sufficient space (strlen(src) + 1 bytes). strcpy returns dest pointer. Declared in <string.h>."
     },
     {
         question: "Who developed the C programming language?",
