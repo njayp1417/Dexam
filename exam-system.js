@@ -37,7 +37,7 @@ class ExamSystem {
             return;
         }
         
-        this.examQuestions = this.selectRandomQuestions(DTS201_QUESTIONS, 50);
+        this.examQuestions = this.selectRandomQuestions(COS201_QUESTIONS, 50);
         this.userAnswers = new Array(50).fill(null);
         this.startTime = new Date();
         

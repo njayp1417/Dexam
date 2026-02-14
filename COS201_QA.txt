@@ -1,0 +1,315 @@
+COS201: Computer Programming I - Comprehensive Question Bank
+Section 1: Introduction to Programming & C Basics
+1. Who is credited with designing and writing the C programming language?
+• (a) Bjarne Stroustrup
+• (b) Dennis Ritchie
+• (c) James Gosling
+• (d) Ken Thompson
+2. In what year was the C language developed?
+• (a) 1969
+• (b) 1970
+• (c) 1972
+• (d) 1985
+3. The approach of breaking a large problem into smaller, manageable pieces is known as:
+• (a) Bottom-up programming
+• (b) Object-oriented programming
+• (c) Top-down programming
+• (d) Sequential programming
+4. A series of instructions that enables a computer to perform a designated task is called a:
+• (a) Algorithm
+• (b) Program
+• (c) Compiler
+• (d) Hardware
+5. Which of these is a strength of the C language?
+• (a) Automatic error checking
+• (b) Built-in classes and packages
+• (c) Efficiency and Portability
+• (d) High-level abstraction that hides memory addresses
+6. The method used to solve a specific problem is referred to as the:
+• (a) Program
+• (b) Syntax
+• (c) Algorithm
+• (d) Compiler
+7. C is often described as a "permissive" language because:
+• (a) It is easy for beginners to learn
+• (b) It assumes the programmer knows what they are doing
+• (c) It allows the use of any variable name
+• (d) It does not require a compiler
+8. Which component of a computer executes programs stored in RAM?
+• (a) SSD
+• (b) BUS
+• (c) CPU
+• (d) Keyboard
+9. Early languages like BASIC and FORTRAN often produced "spaghetti code" because they relied
+on:
+• (a) Functions
+• (b) GOTO statements
+• (c) While loops
+• (d) Pointers
+10. Which of the following is NOT a common use for C?
+• (a) Operating Systems
+• (b) Language Compilers
+• (c) Database management
+• (d) High-level web page styling only
+Section 2: C Program Structure & Compilation
+1. Which preprocessor command is used to include the standard input-output header file?
+• (a) #include <stdlib.h>
+• (b) #include <stdio.h>
+• (c) #import <stdio.h>
+• (d) #define stdio.h
+2. The execution of every C program begins at the:
+• (a) printf() function
+• (b) #include directive
+• (c) main() function
+• (d) First comment line
+3. Every statement in C must be terminated with a:
+• (a) Period (.)
+• (b) Colon (:)
+• (c) Semicolon (;)
+• (d) Comma (,)
+4. What does the \n character represent in a string?
+• (a) Tab
+• (b) Null character
+• (c) Newline
+• (d) Backspace
+5. Which tool converts C source code into machine language (binary)?
+• (a) Linker
+• (b) Preprocessor
+• (c) Compiler
+• (d) Editor
+6. What is the standard file extension for C source files?
+• (a) .exe
+• (b) .obj
+• (c) .c
+• (d) .txt
+7. A programmer's comment in C that spans multiple lines starts with /* and ends with:
+• (a) */
+• (b) //
+• (c) */
+• (d) **
+8. The step where library functions are combined with object code to create an executable is called:
+• (a) Preprocessing
+• (b) Compiling
+• (c) Linking
+• (d) Debugging
+9. An IDE stands for:
+• (a) Integrated Development Environment
+• (b) Internal Data Engine
+• (c) Integrated Design Element
+• (d) Intelligent Debugging Editor
+10. Which of the following is a free, open-source C IDE mentioned in the text?
+• (a) Microsoft Word
+• (b) Code::Blocks
+• (c) Photoshop
+• (d) Excel
+Section 3: Variables, Data Types & Operators
+1. Which data type is used to store values with decimal places?
+• (a) int
+• (b) float
+• (c) _Bool
+• (d) void
+2. What is the purpose of the _Bool data type?
+• (a) To store large integers
+• (b) To store characters
+• (c) To indicate a Boolean condition (0or 1)
+• (d) To store memory addresses
+3. The double data type is similar to float but provides:
+• (a) Less precision
+• (b) Roughly twice the precision
+• (c) Only integer values
+• (d) Only positive numbers
+4. In C, which operator is used for finding the remainder of a division?
+• (a) /
+• (b) *
+• (c) %
+• (d) ^
+5. Which of the following is an assignment operator?
+• (a) ==
+• (b) !=
+• (c) +=
+• (d) <
+6. What does the expression count += 10do?
+• (a) Checks if count equals 10
+• (b) Adds 10to the current value of count
+• (c) Subtracts 10from count
+• (d) Multiplies count by 10
+7. C is a case-sensitive language. This means:
+• (a) Uppercase and lowercase letters are treated as the same
+• (b) Uppercase and lowercase letters are distinct
+• (c) All commands must be in uppercase
+• (d) Variable names cannot have numbers
+8. What is the value of 10+ 2* 5 in C?
+• (a) 60
+• (b) 20
+• (c) 17
+• (d) 25
+9. Which header file must be included to use true and false with Boolean variables?
+• (a) <stdio.h>
+• (b) <stdbool.h>
+• (c) <math.h>
+• (d) <stdlib.h>
+10. To display an integer value using printf, which format specifier is used?
+• (a) %f
+• (b) %c
+• (c) %i or %d
+• (d) %s
+Section 4: Control Flow (Loops & Decisions)
+1. Which statement is used to make a decision in C?
+• (a) for
+• (b) while
+• (c) if
+• (d) do
+2. A loop that repeats forever is called a(n):
+• (a) Finite loop
+• (b) Infinite loop
+• (c) Nested loop
+• (d) Logic error
+3. The for loop contains three expressions in its header. What is the first one?
+• (a) Loop condition
+• (b) Loop expression
+• (c) Init_expression
+• (d) Terminate_expression
+4. Which loop type always executes its body at least once?
+• (a) for
+• (b) while
+• (c) do-while
+• (d) if-else
+5. The switch statement is often used as an alternative to:
+• (a) Single if statements
+• (b) Multiple if-else or if-else if chains
+• (c) Infinite loops
+• (d) Variable declarations
+6. In a switch statement, what happens if a break is omitted after a case?
+• (a) The program crashes
+• (b) The compiler generates an error
+• (c) Execution "falls through" to the next case
+• (d) The loop terminates immediately
+7. What is the purpose of the default case in a switch statement?
+• (a) It is executed if no other case matches
+• (b) It is the first case to be checked
+• (c) it terminates the switch statement
+• (d) It marks the end of the program
+8. Which operator is used to check for equality?
+• (a) =
+• (b) ==
+• (c) !=
+• (d) <>
+9. To exit a loop prematurely, which keyword is used?
+• (a) continue
+• (b) exit
+• (c) break
+• (d) return
+10. Which loop is better when you know exactly how many times you want to repeat a task?
+• (a) while
+• (b) do-while
+• (c) for
+• (d) if
+Section 5: Arrays & Functions
+1. An array is a collection of elements of the:
+• (a) Different types
+• (b) Same type
+• (c) Only integer types
+• (d) Only character types
+2. Elements of an array are stored in:
+• (a) Random memory locations
+• (b) Contiguous memory locations
+• (c) Different files
+• (d) The CPU registers
+3. If an array is declared as int num[5], what is the index of the first element?
+• (a) 1
+• (b) -1
+• (c) 0
+• (d) 5
+4. What is a "string" in C?
+• (a) A special primitive data type
+• (b) An array of characters
+• (c) A mathematical expression
+• (d) A type of loop
+5. A two-dimensional array can be thought of as a:
+• (a) Linear list
+• (b) Matrix (rows and columns)
+• (c) Single variable
+• (d) Pointer to a single value
+6. What keyword is used to return a value from a function?
+• (a) give
+• (b) send
+• (c) return
+• (d) back
+7. A function that does not return any value should have a return type of:
+• (a) int
+• (b) float
+• (c) void
+• (d) null
+8. Which of the following is used to read input from the keyboard?
+• (a) printf()
+• (b) scanf()
+• (c) main()
+• (d) include
+9. In scanf("%d", &n), the & symbol is the:
+• (a) Addition operator
+• (b) Address-of operator
+• (c) Logical AND operator
+• (d) Pointer dereference
+10. What is a "function prototype"?
+• (a) The body of the function
+• (b) A declaration of the function's name, return type, and parameters
+• (c) The call to the function
+• (d) A library file
+Section 6: Advanced Concepts & Miscellaneous
+1. Which function is used to dynamically allocate memory on the heap?
+• (a) free()
+• (b) malloc()
+• (c) scanf()
+• (d) printf()
+2. When you are done with heap memory, you should release it using:
+• (a) delete()
+• (b) remove()
+• (c) free()
+• (d) return
+3. The "terse" nature of C means it was designed to be:
+• (a) Very wordy and descriptive
+• (b) Brief and concise to minimize typing time
+• (c) Easy for non-programmers to read
+• (d) Extremely slow to execute
+4. What is one major weakness of C mentioned in the text?
+• (a) It is too slow
+• (b) It is not portable
+• (c) It can be error-prone and hard to understand
+• (d) It cannot be used for system programming
+5. The logical "NOT" operator in C is represented by:
+• (a) &&
+• (b) ||
+• (c) !
+• (d) ~
+6. A variable declared inside a function is typically:
+• (a) Global
+• (b) Local to that function
+• (c) Accessible by all programs
+• (d) Constant
+7. Which operating system's kernel is famously scripted using C?
+• (a) Windows 95
+• (b) Linux
+• (c) MS-DOS
+• (d) CP/M
+8. Software engineering is concerned with constructing:
+• (a) Games only
+• (b) Robust and reliable computer programs
+• (c) Hardware components
+• (d) Internet cables
+9. Which of the following is NOT a basic data type in C?
+• (a) int
+• (b) char
+• (c) string
+• (d) float
+10. "Open source" software refers to software where:
+• (a) The code is hidden from users
+• (b) Users can alter or improve the source code
+• (c) The software costs a lot of money
+• (d) Only the original creator can see the code
+Answer Key
+1. (b) | 2. (c) | 3. (c) | 4. (b) | 5. (c) | 6. (c) | 7. (b) | 8. (c) | 9. (b) | 10. (d)
+2. (b) | 12. (c) | 13. (c) | 14. (c) | 15. (c) | 16. (c) | 17. (a) | 18. (c) | 19. (a) | 20. (b)
+3. (b) | 22. (c) | 23. (b) | 24. (c) | 25. (c) | 26. (b) | 27. (b) | 28. (b) | 29. (b) | 30. (c)
+4. (c) | 32. (b) | 33. (c) | 34. (c) | 35. (b) | 36. (c) | 37. (a) | 38. (b) | 39. (c) | 40. (c)
+5. (b) | 42. (b) | 43. (c) | 44. (b) | 45. (b) | 46. (c) | 47. (c) | 48. (b) | 49. (b) | 50. (b)
+6. (b) | 52. (c) | 53. (b) | 54. (c) | 55. (c) | 56. (b) | 57. (b) | 58. (b) | 59. (c) | 60. (b)
