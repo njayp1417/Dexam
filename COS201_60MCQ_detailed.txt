@@ -1,0 +1,395 @@
+Page 1:
+COS201: Computer Programming I (C Language)
+60 Multiple Choice Questions (MCQs) with Answers
+1. Who developed the C programming language?
+A. Bjarne Stroustrup
+B. Dennis Ritchie
+C. James Gosling
+D. Ken Thompson
+Answer: B
+2. Which function is the entry point of a C program?
+A. start()
+B. program()
+C. main()
+D. init()
+Answer: C
+3. Which header file is required for printf()?
+A. stdlib.h
+B. conio.h
+C. stdio.h
+D. math.h
+Answer: C
+4. Which data type stores integer values?
+A. float
+B. int
+C. double
+D. char
+Answer: B
+5. What symbol is used for single-line comments?
+A. /* */
+B. #
+C. //
+D. **
+
+---
+Page 2:
+Answer: C
+6. Which loop executes at least once?
+A. for
+B. while
+C. do-while
+D. if
+Answer: C
+7. What is the correct format specifier for int?
+A. %f
+B. %c
+C. %d
+D. %s
+Answer: C
+8. Which operator is used for multiplication?
+A. x
+B. *
+C. %
+D. #
+Answer: B
+9. Which symbol is used for assignment?
+A. ==
+B. =
+C. :=
+D. =>
+Answer: B
+10. Which keyword is used to exit a loop?
+A. stop
+B. return
+C. break
+D. exit
+Answer: C
+11. Which of the following is a valid concept in C programming?
+A. Variables
+
+---
+Page 3:
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+12. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+13. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+14. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+15. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+16. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+
+---
+Page 4:
+17. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+18. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+19. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+20. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+21. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+22. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+
+---
+Page 5:
+C. Loops
+D. All of the above
+Answer: D
+23. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+24. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+25. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+26. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+27. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+
+---
+Page 6:
+28. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+29. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+30. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+31. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+32. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+33. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+
+---
+Page 7:
+D. All of the above
+Answer: D
+34. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+35. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+36. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+37. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+38. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+39. Which of the following is a valid concept in C programming?
+
+---
+Page 8:
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+40. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+41. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+42. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+43. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+44. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+
+---
+Page 9:
+Answer: D
+45. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+46. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+47. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+48. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+49. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+50. Which of the following is a valid concept in C programming?
+A. Variables
+
+---
+Page 10:
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+51. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+52. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+53. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+54. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+55. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+
+---
+Page 11:
+56. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+57. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+58. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+59. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+60. Which of the following is a valid concept in C programming?
+A. Variables
+B. Functions
+C. Loops
+D. All of the above
+Answer: D
+
+---
