@@ -21,6 +21,18 @@ class ExamSystem {
                 subtitle: 'Computer Programming I',
                 questions: typeof COS201_QUESTIONS !== 'undefined' ? COS201_QUESTIONS : []
             },
+            'CYB201': {
+                title: 'CYB201',
+                subtitle: 'Cybersecurity Fundamentals',
+                questions: typeof CYB201_QUESTIONS !== 'undefined' ? CYB201_QUESTIONS : [],
+                explanations: typeof CYB201_EXPLANATIONS !== 'undefined' ? CYB201_EXPLANATIONS : {}
+            },
+            'IFT211': {
+                title: 'IFT211',
+                subtitle: 'Digital Logic and Design',
+                questions: typeof IFT211_QUESTIONS !== 'undefined' ? IFT211_QUESTIONS : [],
+                explanations: typeof IFT211_EXPLANATIONS !== 'undefined' ? IFT211_EXPLANATIONS : {}
+            },
             'MAT201_STUDY': {
                 title: 'MAT201 Study Mode',
                 subtitle: 'Mathematics - Learn with Solutions',
@@ -490,9 +502,20 @@ class ExamSystem {
         const container = document.getElementById('answerReview');
         container.innerHTML = '';
         
+        const course = this.courseData[this.selectedCourse];
+        const explanations = course?.explanations || {};
+        
         reviewData.forEach(item => {
             const reviewDiv = document.createElement('div');
             reviewDiv.className = `review-item ${item.isCorrect ? 'correct' : 'wrong'}`;
+            
+            // Get explanation from separate file if available, otherwise use embedded explanation
+            const question = this.examQuestions.find(q => q.question === item.question);
+            let explanation = item.explanation;
+            
+            if (question && question.id && explanations[question.id]) {
+                explanation = explanations[question.id];
+            }
             
             reviewDiv.innerHTML = `
                 <div class="review-question">
@@ -507,7 +530,7 @@ class ExamSystem {
                     </div>
                 ` : ''}
                 <div class="explanation">
-                    <strong>Explanation:</strong> ${item.explanation}
+                    <strong>Explanation:</strong> ${explanation}
                 </div>
                 <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 5px;">
                     <strong>Topic:</strong> ${item.topic}
