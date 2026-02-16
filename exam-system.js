@@ -51,6 +51,11 @@ class ExamSystem {
     
     init() {
         this.setupEventListeners();
+        this.updateCourseAvailability();
+    }
+    
+    updateCourseAvailability() {
+        // All courses are now available
     }
     
     setupEventListeners() {
@@ -179,8 +184,22 @@ class ExamSystem {
         }
         
         const courseQuestions = this.courseData[this.selectedCourse].questions;
-        this.examQuestions = this.selectRandomQuestions(courseQuestions, 50);
-        this.userAnswers = new Array(50).fill(null);
+        
+        // Check if questions are available
+        if (!courseQuestions || courseQuestions.length === 0) {
+            alert(`Sorry! ${this.courseData[this.selectedCourse].title} questions are not available yet. Please check back later or contact the administrator.`);
+            this.showScreen('courseSelectionScreen');
+            return;
+        }
+        
+        // Check if we have enough questions
+        if (courseQuestions.length < 50) {
+            alert(`This course only has ${courseQuestions.length} questions available. The exam will use all available questions.`);
+        }
+        
+        const questionsToUse = Math.min(50, courseQuestions.length);
+        this.examQuestions = this.selectRandomQuestions(courseQuestions, questionsToUse);
+        this.userAnswers = new Array(questionsToUse).fill(null);
         this.startTime = new Date();
         
         this.showScreen('examScreen');

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "c:\Users\PC\OneDrive\Desktop\DTSz\ocr_extractor.py", line 6, in <module>
+    import pytesseract
+ModuleNotFoundError: No module named 'pytesseract'
