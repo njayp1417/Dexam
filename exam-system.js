@@ -33,6 +33,18 @@ class ExamSystem {
                 questions: typeof IFT211_QUESTIONS !== 'undefined' ? IFT211_QUESTIONS : [],
                 explanations: typeof IFT211_EXPLANATIONS !== 'undefined' ? IFT211_EXPLANATIONS : {}
             },
+            'SEN201': {
+                title: 'SEN201',
+                subtitle: 'Software Engineering',
+                questions: typeof SEN201_QUESTIONS !== 'undefined' ? SEN201_QUESTIONS : [],
+                explanations: typeof SEN201_EXPLANATIONS !== 'undefined' ? SEN201_EXPLANATIONS : {}
+            },
+            'CSC203': {
+                title: 'CSC203',
+                subtitle: 'Discrete Structures',
+                questions: typeof CSC203_QUESTIONS !== 'undefined' ? CSC203_QUESTIONS : [],
+                explanations: typeof CSC203_EXPLANATIONS !== 'undefined' ? CSC203_EXPLANATIONS : {}
+            },
             'MAT201_STUDY': {
                 title: 'MAT201 Study Mode',
                 subtitle: 'Mathematics - Learn with Solutions',
