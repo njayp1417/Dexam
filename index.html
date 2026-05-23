@@ -8,10 +8,12 @@
 </head>
 <body>
 
-    <!-- ===================== PORTAL SWITCHER ===================== -->
-    <div id="portalSwitcher" class="portal-switcher">
-        <button id="switchToFriendBtn" class="portal-btn friend-btn" onclick="switchPortal('friend')">🎓 Switch to Friend's Exam</button>
-        <button id="switchToMyBtn" class="portal-btn my-btn" onclick="switchPortal('my')" style="display:none;">🖥️ Switch to My Exam</button>
+    <!-- ===================== PORTAL TOGGLE ===================== -->
+    <div class="portal-switcher">
+        <button id="portalToggleBtn" class="portal-toggle-btn" onclick="togglePortal()">
+            <span class="toggle-icon">🎓</span>
+            <span id="toggleLabel">Friend's Exam</span>
+        </button>
     </div>
 
     <!-- ==================== MY EXAM (DEXAM) ==================== -->

@@ -603,23 +603,30 @@ class ExamSystem {
     }
 }
 
-// ===================== PORTAL SWITCHER =====================
-function switchPortal(target) {
+// ===================== PORTAL TOGGLE =====================
+let currentPortal = 'my';
+
+function togglePortal() {
     const myPortal = document.getElementById('myExamPortal');
     const friendPortal = document.getElementById('friendExamPortal');
-    const toFriendBtn = document.getElementById('switchToFriendBtn');
-    const toMyBtn = document.getElementById('switchToMyBtn');
+    const btn = document.getElementById('portalToggleBtn');
+    const label = document.getElementById('toggleLabel');
+    const icon = btn.querySelector('.toggle-icon');
 
-    if (target === 'friend') {
+    if (currentPortal === 'my') {
         myPortal.classList.remove('active-portal');
         friendPortal.classList.add('active-portal');
-        toFriendBtn.style.display = 'none';
-        toMyBtn.style.display = 'inline-block';
+        label.textContent = "My Exam";
+        icon.textContent = "\uD83D\uDDA5\uFE0F";
+        btn.classList.add('active-friend');
+        currentPortal = 'friend';
     } else {
         friendPortal.classList.remove('active-portal');
         myPortal.classList.add('active-portal');
-        toMyBtn.style.display = 'none';
-        toFriendBtn.style.display = 'inline-block';
+        label.textContent = "Friend's Exam";
+        icon.textContent = "\uD83C\uDF93";
+        btn.classList.remove('active-friend');
+        currentPortal = 'my';
     }
     window.scrollTo(0, 0);
 }
