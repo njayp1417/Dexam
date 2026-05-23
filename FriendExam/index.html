@@ -17,109 +17,37 @@
             </div>
             
             <div class="course-grid">
-                <div class="course-card" data-course="DTS201">
-                    <h2>DTS201</h2>
-                    <p>Introduction to Data Science</p>
+                <div class="course-card" data-course="CSS242">
+                    <h2>CSS242</h2>
+                    <p>Measurements & Patterns of Crime and Delinquency</p>
                     <div class="course-stats">
-                        <span>320 Questions</span>
+                        <span>100 Questions</span>
                         <span>50 per exam</span>
                     </div>
                 </div>
-                
-                <div class="course-card" data-course="COS201">
-                    <h2>COS201</h2>
-                    <p>Computer Programming I</p>
+                <div class="course-card" data-course="CSS212">
+                    <h2>CSS212</h2>
+                    <p>The Sociology of Punishment and Corrections</p>
                     <div class="course-stats">
-                        <span>108 Questions</span>
+                        <span>100 Questions</span>
                         <span>50 per exam</span>
                     </div>
                 </div>
-                
-                <div class="course-card" data-course="CYB201">
-                    <h2>CYB201</h2>
-                    <p>Cybersecurity Fundamentals</p>
+                <div class="course-card" data-course="CSS246">
+                    <h2>CSS246</h2>
+                    <p>Legal and Social Framework of Private Security Services in Nigeria</p>
                     <div class="course-stats">
-                        <span>50 Questions</span>
+                        <span>100 Questions</span>
                         <span>50 per exam</span>
                     </div>
                 </div>
-                
-                <div class="course-card" data-course="IFT211">
-                    <h2>IFT211</h2>
-                    <p>Digital Logic and Design</p>
+                <div class="course-card" data-course="GST203">
+                    <h2>GST203</h2>
+                    <p>Introduction to Philosophy and Logic</p>
                     <div class="course-stats">
-                        <span>50 Questions</span>
-                        <span>50 per exam</span>
+                        <span>40 Questions</span>
+                        <span>40 per exam</span>
                     </div>
-                </div>
-                
-                <div class="course-card" data-course="SEN201">
-                    <h2>SEN201</h2>
-                    <p>Software Engineering</p>
-                    <div class="course-stats">
-                        <span>150 Questions</span>
-                        <span>50 per exam</span>
-                    </div>
-                </div>
-                
-                <div class="course-card" data-course="CSC203">
-                    <h2>CSC203</h2>
-                    <p>Discrete Structures</p>
-                    <div class="course-stats">
-                        <span>71 Questions</span>
-                        <span>50 per exam</span>
-                    </div>
-                </div>
-                
-                <div class="course-card" data-course="MAT201_STUDY">
-                    <h2>MAT201 Study</h2>
-                    <p>Mathematics - Study Mode</p>
-                    <div class="course-stats">
-                        <span>150 Questions</span>
-                        <span>Learn with solutions</span>
-                    </div>
-                </div>
-                
-                <div class="course-card" data-course="MAT201_EXAM">
-                    <h2>MAT201 Exam</h2>
-                    <p>Mathematics - Test Mode</p>
-                    <div class="course-stats">
-                        <span>150 Questions</span>
-                        <span>50 per exam</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Topic Selection Screen (for MAT201 Study Mode) -->
-    <div id="topicSelectionScreen" class="screen">
-        <div class="container">
-            <div class="header">
-                <h1>MAT201 Study Mode</h1>
-                <p class="subtitle">Select a Topic to Learn</p>
-                <p class="course-info">Choose a topic to see explanation and examples</p>
-            </div>
-            
-            <div class="topics-grid" id="topicsGrid">
-                <!-- Topics will be dynamically loaded here -->
-            </div>
-            
-            <button id="backToCourseBtn" class="btn btn-secondary" style="margin-top: 20px;">← Back to Courses</button>
-        </div>
-    </div>
-
-    <!-- Topic Explanation Screen -->
-    <div id="topicExplanationScreen" class="screen">
-        <div class="container">
-            <div class="card" style="max-width: 900px; margin: 0 auto;">
-                <div id="topicExplanationContent">
-                    <!-- Topic explanation will be loaded here -->
-                </div>
-                
-                <div class="navigation-buttons" style="margin-top: 30px;">
-                    <button id="backToTopicsBtn" class="btn btn-secondary">← Back to Topics</button>
-                    <button id="startPracticeBtn" class="btn btn-primary">Start Practice Questions →</button>
                 </div>
             </div>
         </div>
@@ -187,7 +115,6 @@
 
             <div class="card question-card">
                 <h3 id="questionText" class="question-text"></h3>
-                
                 <div id="optionsContainer" class="options-container"></div>
             </div>
 
@@ -255,23 +182,15 @@
         </div>
     </div>
 
-    <!-- Cross-link to FriendExam -->
+    <!-- Cross-link to Dexam -->
     <div style="position:fixed;bottom:20px;right:20px;z-index:9999;">
-        <a href="../FriendExam/index.html" style="display:inline-block;background:#6c63ff;color:#fff;padding:10px 18px;border-radius:25px;text-decoration:none;font-weight:bold;font-size:0.9rem;box-shadow:0 4px 12px rgba(0,0,0,0.3);">🎓 Friend's Exam →</a>
+        <a href="../index.html" style="display:inline-block;background:#6c63ff;color:#fff;padding:10px 18px;border-radius:25px;text-decoration:none;font-weight:bold;font-size:0.9rem;box-shadow:0 4px 12px rgba(0,0,0,0.3);">&#8592; My Exam</a>
     </div>
 
-    <script src="DTS201_QUESTIONS_DATABASE.js"></script>
-    <script src="COS201_QUESTIONS_DATABASE.js"></script>
-    <script src="CYB201_QUESTIONS_DATABASE.js"></script>
-    <script src="IFT211_QUESTIONS_DATABASE.js"></script>
-    <script src="SEN201_QUESTIONS_DATABASE.js"></script>
-    <script src="CSC203_QUESTIONS_DATABASE.js"></script>
-    <script src="CYB201_EXPLANATIONS.js"></script>
-    <script src="IFT211_EXPLANATIONS.js"></script>
-    <script src="SEN201_EXPLANATIONS.js"></script>
-    <script src="CSC203_EXPLANATIONS.js"></script>
-    <script src="MAT201_QUESTIONS_DATABASE.js"></script>
-    <script src="MAT201_TOPICS.js"></script>
+    <script src="extracted/CSS242_QUESTIONS_DATABASE.js"></script>
+    <script src="extracted/CSS212_QUESTIONS_DATABASE.js"></script>
+    <script src="extracted/CSS246_QUESTIONS_DATABASE.js"></script>
+    <script src="extracted/GST203_QUESTIONS_DATABASE.js"></script>
     <script src="exam-system.js"></script>
 </body>
 </html>

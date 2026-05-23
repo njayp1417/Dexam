@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assembly Language Assignment</title>
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+            font-size: 12pt;
+            margin: 1in;
+            line-height: 1.6;
+            color: #000;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .header h2, .header h3 {
+            margin: 4px 0;
+        }
+        hr {
+            border: 1px solid #000;
+            margin: 10px 0;
+        }
+        table.info {
+            margin: 14px auto;
+            text-align: left;
+            border-collapse: collapse;
+        }
+        table.info td {
+            border: none;
+            padding: 3px 16px;
+        }
+        h4 {
+            margin-bottom: 4px;
+        }
+        pre {
+            background: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 12px;
+            font-family: "Courier New", monospace;
+            font-size: 10pt;
+            white-space: pre;
+            overflow-x: auto;
+        }
+        .section {
+            margin-bottom: 28px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h2>DEPARTMENT OF COMPUTER SCIENCE</h2>
+        <h3>Assembly Language Programming &mdash; Assignment</h3>
+        <hr>
+        <table class="info">
+            <tr><td><strong>Name:</strong></td><td>Asagwara Nelson Ekenedilichukwu</td></tr>
+            <tr><td><strong>Matric No:</strong></td><td>SCI/24/25/0328</td></tr>
+            <tr><td><strong>Course:</strong></td><td>IFT212</td></tr>
+            <tr><td><strong>Department:</strong></td><td>Computer Science</td></tr>
+        </table>
+        <hr>
+    </div>
+
+    <!-- QUESTIONS -->
+    <div class="section">
+        <h4>Questions</h4>
+        <ol>
+            <li>Develop a standalone factorial program in Assembly language.</li>
+            <li>Convert your solution in (1) above to a function that is called from a main program.</li>
+        </ol>
+    </div>
+
+    <hr>
+
+    <!-- SOLUTION 1 -->
+    <div class="section">
+        <h4>1. Standalone Factorial Program</h4>
+<pre>
+; Standalone Factorial Program
+; Computes n! where n = 5
+; Assembler: NASM (x86, 32-bit)
+
+section .data
+    n       dd  5               ; input: compute 5!
+    result  dd  0               ; store final result
+
+section .text
+    global _start
+
+_start:
+    mov     ecx, [n]            ; ECX = n (loop counter)
+    mov     eax, 1              ; EAX = 1 (accumulator)
+
+    cmp     ecx, 0              ; if n == 0, 0! = 1
+    je      done
+
+factorial_loop:
+    mul     ecx                 ; EAX = EAX * ECX
+    dec     ecx                 ; ECX = ECX - 1
+    jnz     factorial_loop      ; repeat while ECX != 0
+
+done:
+    mov     [result], eax       ; store result (120) in memory
+
+    mov     eax, 1              ; syscall: exit
+    xor     ebx, ebx
+    int     0x80
+</pre>
+    </div>
+
+    <hr>
+
+    <!-- SOLUTION 2 -->
+    <div class="section">
+        <h4>2. Factorial as a Function Called from Main</h4>
+<pre>
+; Factorial as a Procedure Called from Main
+; Assembler: NASM (x86, 32-bit)
+
+section .data
+    n       dd  6               ; input: compute 6!
+    result  dd  0               ; store final result
+
+section .text
+    global _start
+
+; PROCEDURE: factorial
+;   Input  : ECX = n
+;   Output : EAX = n!
+factorial:
+    mov     eax, 1              ; EAX = 1 (accumulator)
+
+    cmp     ecx, 0              ; if n == 0, return 1
+    je      .done
+
+.loop:
+    mul     ecx                 ; EAX = EAX * ECX
+    dec     ecx                 ; ECX--
+    jnz     .loop               ; repeat while ECX != 0
+
+.done:
+    ret                         ; return to caller; result in EAX
+
+; MAIN PROGRAM
+_start:
+    mov     ecx, [n]            ; load n into ECX
+    call    factorial           ; call the factorial procedure
+    mov     [result], eax       ; save result (720) in memory
+
+    mov     eax, 1              ; syscall: exit
+    xor     ebx, ebx
+    int     0x80
+</pre>
+    </div>
+
+</body>
+</html>

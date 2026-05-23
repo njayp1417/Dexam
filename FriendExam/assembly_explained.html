@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Understanding Assembly Language - Factorial Program</title>
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+            font-size: 12pt;
+            margin: 1in;
+            line-height: 1.8;
+            color: #000;
+        }
+        h1 { font-size: 18pt; text-align: center; margin-bottom: 4px; }
+        h2 { font-size: 14pt; border-bottom: 2px solid #000; padding-bottom: 4px; margin-top: 36px; }
+        h3 { font-size: 12pt; margin-bottom: 4px; }
+        .center { text-align: center; }
+        hr { border: 1px solid #000; margin: 10px 0; }
+        pre {
+            background: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 12px;
+            font-family: "Courier New", monospace;
+            font-size: 10pt;
+            white-space: pre;
+            overflow-x: auto;
+        }
+        table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+        td, th { border: 1px solid #000; padding: 7px 10px; vertical-align: top; }
+        th { background: #ddd; }
+        .code-line {
+            font-family: "Courier New", monospace;
+            background: #f0f0f0;
+            padding: 1px 6px;
+            font-size: 10pt;
+        }
+        .note {
+            background: #fffbe6;
+            border-left: 4px solid #f0c000;
+            padding: 8px 12px;
+            margin: 10px 0;
+        }
+        .section { margin-bottom: 32px; }
+        ul li { margin-bottom: 6px; }
+    </style>
+</head>
+<body>
+
+    <div class="center">
+        <h1>Understanding Assembly Language Programming</h1>
+        <p><em>A Line-by-Line Guide to the Factorial Program using MASM/TASM</em></p>
+        <hr>
+    </div>
+
+    <div class="section">
+        <h2>Chapter 1: What is Assembly Language?</h2>
+        <p>
+            Assembly language is a <strong>low-level programming language</strong> that sits directly above machine code (binary 0s and 1s).
+            Every instruction you write in assembly corresponds almost directly to one instruction the CPU executes.
+        </p>
+        <p>Unlike high-level languages like Python or Java, in assembly you manually control:</p>
+        <ul>
+            <li>Which <strong>registers</strong> (tiny storage slots inside the CPU) hold your data</li>
+            <li>How data moves between memory and the CPU</li>
+            <li>How arithmetic is performed step by step</li>
+            <li>How the program starts and exits</li>
+        </ul>
+        <div class="note">
+            <strong>Analogy:</strong> If a high-level language is like driving an automatic car,
+            assembly language is like manually operating every gear, clutch, and engine valve yourself.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Chapter 2: What is MASM / TASM?</h2>
+        <p>
+            <strong>MASM</strong> (Microsoft Macro Assembler) and <strong>TASM</strong> (Turbo Assembler by Borland)
+            are tools that translate your assembly code into machine code the CPU can run.
+            They are the standard assemblers taught in Nigerian universities for 16-bit DOS-based assembly programming.
+        </p>
+        <p>They use the <strong>Intel x86 syntax</strong> and follow this program structure:</p>
+        <pre>
+.MODEL  &lt;memory model&gt;
+.STACK  &lt;size&gt;
+.DATA
+    ; your variables here
+.CODE
+    ; your instructions here
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Chapter 3: Key Concepts Before Reading the Code</h2>
+
+        <h3>3.1 Registers</h3>
+        <p>Registers are tiny, ultra-fast storage locations inside the CPU. In 16-bit assembly the main ones are:</p>
+        <table>
+            <tr><th>Register</th><th>Name</th><th>Common Use</th></tr>
+            <tr><td>AX</td><td>Accumulator</td><td>Arithmetic results, general purpose</td></tr>
+            <tr><td>BX</td><td>Base</td><td>Memory addressing</td></tr>
+            <tr><td>CX</td><td>Counter</td><td>Loop counter</td></tr>
+            <tr><td>DX</td><td>Data</td><td>Extended arithmetic with AX</td></tr>
+        </table>
+        <p>AX can be split into two 8-bit halves: <strong>AH</strong> (high byte) and <strong>AL</strong> (low byte).</p>
+
+        <h3>3.2 The MUL Instruction</h3>
+        <p>
+            <span class="code-line">MUL CX</span> multiplies <strong>AX by CX</strong> and stores the result back in AX.
+            For small numbers like 5! or 6! the result fits in AX.
+        </p>
+
+        <h3>3.3 The LOOP Instruction</h3>
+        <p><span class="code-line">LOOP label</span> does two things automatically:</p>
+        <ul>
+            <li>Decrements CX by 1</li>
+            <li>Jumps back to <em>label</em> if CX is not zero</li>
+        </ul>
+
+        <h3>3.4 INT 21H</h3>
+        <p><span class="code-line">INT 21H</span> is a DOS interrupt — a way to ask the operating system to perform a service:</p>
+        <table>
+            <tr><th>AH Value</th><th>Service</th></tr>
+            <tr><td>4CH</td><td>Exit the program and return to DOS</td></tr>
+            <tr><td>09H</td><td>Print a string to the screen</td></tr>
+            <tr><td>01H</td><td>Read a character from keyboard</td></tr>
+        </table>
+
+        <h3>3.5 What is Factorial?</h3>
+        <p>The factorial of n (written n!) means multiplying all integers from n down to 1:</p>
+        <p style="text-align:center;"><strong>5! = 5 &times; 4 &times; 3 &times; 2 &times; 1 = 120</strong></p>
+    </div>
+
+    <div class="section">
+        <h2>Chapter 4: Solution 1 — Standalone Factorial Program (Line by Line)</h2>
+<pre>
+.MODEL SMALL
+.STACK 100H
+
+.DATA
+NUM     DB 5
+RESULT  DW ?
+
+.CODE
+MAIN PROC
+
+    MOV AX, @DATA
+    MOV DS, AX
+
+    MOV AL, NUM
+    MOV AH, 0
+
+    MOV CX, AX
+    MOV AX, 1
+
+FACTORIAL_LOOP:
+    MUL CX
+    LOOP FACTORIAL_LOOP
+
+    MOV RESULT, AX
+
+    MOV AH, 4CH
+    INT 21H
+
+MAIN ENDP
+END MAIN
+</pre>
+
+        <table>
+            <tr><th>Line</th><th>Explanation</th></tr>
+            <tr>
+                <td><span class="code-line">.MODEL SMALL</span></td>
+                <td>Tells the assembler to use the SMALL memory model — both code and data fit within one 64KB segment each. Most common model for simple DOS programs.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">.STACK 100H</span></td>
+                <td>Reserves 256 bytes (100 in hexadecimal) of memory for the stack. The stack stores data temporarily during procedure calls and interrupts.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">.DATA</span></td>
+                <td>Marks the beginning of the data segment where variables are declared.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">NUM DB 5</span></td>
+                <td>Declares a variable called NUM. DB means "Define Byte" — stores one byte. Value is 5 (we want to compute 5!).</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">RESULT DW ?</span></td>
+                <td>Declares a variable called RESULT. DW means "Define Word" (2 bytes). The ? means uninitialized — we will store the answer here later.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">.CODE</span></td>
+                <td>Marks the beginning of the code segment where instructions are written.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">MAIN PROC</span></td>
+                <td>Declares the start of a procedure named MAIN. This is the entry point of the program.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">MOV AX, @DATA</span></td>
+                <td>Loads the address of the data segment into AX. @DATA is a symbol the assembler replaces with the actual segment address of your .DATA section.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">MOV DS, AX</span></td>
+                <td>Copies AX into DS (Data Segment register). You cannot load DS directly — you must go through AX first. This tells the CPU where your variables live in memory.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">MOV AL, NUM</span></td>
+                <td>Loads the value of NUM (5) into AL — the low byte of AX.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">MOV AH, 0</span></td>
+                <td>Clears the high byte of AX to 0. This ensures AX = 0005H with no garbage in the upper byte. Now AX = 5.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">MOV CX, AX</span></td>
+                <td>Copies AX (value 5) into CX. CX will serve as the loop counter, counting down from 5 to 1.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">MOV AX, 1</span></td>
+                <td>Sets AX to 1. AX is our accumulator — holds the running product. We start at 1 because 1 is the identity for multiplication.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">FACTORIAL_LOOP:</span></td>
+                <td>A label — a named marker in the code. The LOOP instruction jumps back here as long as CX is not zero.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">MUL CX</span></td>
+                <td>
+                    Multiplies AX by CX, result stored in AX:<br><br>
+                    Iteration 1: AX = 1 &times; 5 = 5 &nbsp; (CX becomes 4)<br>
+                    Iteration 2: AX = 5 &times; 4 = 20 &nbsp; (CX becomes 3)<br>
+                    Iteration 3: AX = 20 &times; 3 = 60 &nbsp; (CX becomes 2)<br>
+                    Iteration 4: AX = 60 &times; 2 = 120 &nbsp; (CX becomes 1)<br>
+                    Iteration 5: AX = 120 &times; 1 = 120 &nbsp; (CX becomes 0)
+                </td>
+            </tr>
+            <tr>
+                <td><span class="code-line">LOOP FACTORIAL_LOOP</span></td>
+                <td>Decrements CX by 1 and jumps back to FACTORIAL_LOOP if CX &ne; 0. When CX = 0 the loop ends. AX = 120.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">MOV RESULT, AX</span></td>
+                <td>Stores the final result (120) from AX into the RESULT variable in memory.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">MOV AH, 4CH</span></td>
+                <td>Loads 4CH into AH — the DOS service code for "terminate program".</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">INT 21H</span></td>
+                <td>Triggers DOS interrupt 21H. Since AH = 4CH, DOS terminates the program.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">MAIN ENDP</span></td>
+                <td>Marks the end of the MAIN procedure.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">END MAIN</span></td>
+                <td>Tells the assembler this is the end of the source file and that execution begins at MAIN.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Chapter 5: Solution 2 — Factorial as a Called Procedure (Line by Line)</h2>
+        <p>
+            In this version the factorial logic is moved into its own separate procedure called
+            <strong>FACTORIAL</strong>. The MAIN procedure calls it using the <span class="code-line">CALL</span> instruction.
+        </p>
+<pre>
+.MODEL SMALL
+.STACK 100H
+
+.DATA
+NUM     DB 5
+RESULT  DW ?
+
+.CODE
+
+MAIN PROC
+
+    MOV AX, @DATA
+    MOV DS, AX
+
+    MOV AL, NUM
+    MOV AH, 0
+
+    CALL FACTORIAL
+
+    MOV RESULT, AX
+
+    MOV AH, 4CH
+    INT 21H
+
+MAIN ENDP
+
+
+FACTORIAL PROC
+
+    MOV CX, AX
+    MOV AX, 1
+
+FACT_LOOP:
+    MUL CX
+    LOOP FACT_LOOP
+
+    RET
+
+FACTORIAL ENDP
+
+END MAIN
+</pre>
+
+        <table>
+            <tr><th>Line</th><th>Explanation</th></tr>
+            <tr>
+                <td><span class="code-line">MOV AL, NUM / MOV AH, 0</span></td>
+                <td>Same as Solution 1 — loads n=5 into AX. AX now holds the argument that will be passed to the FACTORIAL procedure.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">CALL FACTORIAL</span></td>
+                <td>Transfers execution to the FACTORIAL procedure. Before jumping, the CPU automatically <strong>pushes the return address onto the stack</strong> so it knows where to come back. AX (holding 5) is passed as the input.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">MOV RESULT, AX</span></td>
+                <td>After FACTORIAL returns, AX contains the result (120). This saves it to memory.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">FACTORIAL PROC</span></td>
+                <td>Declares the start of a new reusable procedure named FACTORIAL.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">MOV CX, AX</span></td>
+                <td>Inside the procedure, AX holds n (5). Copies it into CX to use as the loop counter.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">MOV AX, 1</span></td>
+                <td>Resets AX to 1 to begin the multiplication accumulation.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">FACT_LOOP: MUL CX / LOOP FACT_LOOP</span></td>
+                <td>Identical factorial loop as Solution 1. Multiplies AX by CX repeatedly until CX = 0. Result ends up in AX = 120.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">RET</span></td>
+                <td>Returns from the procedure back to MAIN. The CPU <strong>pops the return address from the stack</strong> and jumps back to the instruction after CALL FACTORIAL. AX still holds 120.</td>
+            </tr>
+            <tr>
+                <td><span class="code-line">FACTORIAL ENDP</span></td>
+                <td>Marks the end of the FACTORIAL procedure.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Chapter 6: How CALL and RET Work Together</h2>
+        <p>When the CPU executes <span class="code-line">CALL FACTORIAL</span>:</p>
+        <ol>
+            <li>It saves the address of the next instruction (after CALL) onto the <strong>stack</strong>.</li>
+            <li>It jumps to the FACTORIAL procedure.</li>
+            <li>The procedure runs and computes the result in AX.</li>
+            <li>When <span class="code-line">RET</span> is reached, the CPU retrieves the saved address from the stack.</li>
+            <li>Execution resumes in MAIN at <span class="code-line">MOV RESULT, AX</span>.</li>
+        </ol>
+        <div class="note">
+            <strong>This is why the stack exists.</strong> Without it, the CPU would have no way of knowing
+            where to return after a procedure call.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Chapter 7: Quick Reference Summary</h2>
+        <table>
+            <tr><th>Directive / Instruction</th><th>What it Does</th></tr>
+            <tr><td>.MODEL SMALL</td><td>Sets memory layout — code and data each in one 64KB segment</td></tr>
+            <tr><td>.STACK 100H</td><td>Reserves 256 bytes of stack memory</td></tr>
+            <tr><td>.DATA</td><td>Where variables are declared</td></tr>
+            <tr><td>.CODE</td><td>Where all executable instructions live</td></tr>
+            <tr><td>DB / DW</td><td>Define Byte (1 byte) / Define Word (2 bytes)</td></tr>
+            <tr><td>PROC / ENDP</td><td>Marks the start and end of a procedure</td></tr>
+            <tr><td>MOV DS, AX</td><td>Initializes the data segment so variables can be accessed</td></tr>
+            <tr><td>MUL CX</td><td>Multiplies AX by CX, result in AX</td></tr>
+            <tr><td>LOOP label</td><td>Decrements CX and loops back if CX &ne; 0</td></tr>
+            <tr><td>CALL / RET</td><td>Jumps to a procedure and returns from it using the stack</td></tr>
+            <tr><td>INT 21H (AH=4CH)</td><td>Exits the program via DOS interrupt</td></tr>
+        </table>
+    </div>
+
+</body>
+</html>
