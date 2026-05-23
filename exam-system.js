@@ -603,6 +603,279 @@ class ExamSystem {
     }
 }
 
+// ===================== PORTAL SWITCHER =====================
+function switchPortal(target) {
+    const myPortal = document.getElementById('myExamPortal');
+    const friendPortal = document.getElementById('friendExamPortal');
+    const toFriendBtn = document.getElementById('switchToFriendBtn');
+    const toMyBtn = document.getElementById('switchToMyBtn');
+
+    if (target === 'friend') {
+        myPortal.classList.remove('active-portal');
+        friendPortal.classList.add('active-portal');
+        toFriendBtn.style.display = 'none';
+        toMyBtn.style.display = 'inline-block';
+    } else {
+        friendPortal.classList.remove('active-portal');
+        myPortal.classList.add('active-portal');
+        toMyBtn.style.display = 'none';
+        toFriendBtn.style.display = 'inline-block';
+    }
+    window.scrollTo(0, 0);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     new ExamSystem();
+    new FriendExamSystem();
 });
+
+// ===================== FRIEND EXAM SYSTEM =====================
+class FriendExamSystem {
+    constructor() {
+        this.studentName = '';
+        this.matricNumber = '';
+        this.examQuestions = [];
+        this.currentQuestionIndex = 0;
+        this.userAnswers = [];
+        this.timeRemaining = 25 * 60;
+        this.timerInterval = null;
+        this.startTime = null;
+        this.selectedCourse = null;
+
+        this.courseData = {
+            'CSS242': { title: 'CSS242', subtitle: 'Measurements & Patterns of Crime and Delinquency', questions: typeof CSS242_QUESTIONS !== 'undefined' ? CSS242_QUESTIONS : [] },
+            'CSS212': { title: 'CSS212', subtitle: 'The Sociology of Punishment and Corrections', questions: typeof CSS212_QUESTIONS !== 'undefined' ? CSS212_QUESTIONS : [] },
+            'CSS244': { title: 'CSS244', subtitle: 'Types and Analysis of Security Threats', questions: typeof CSS244_QUESTIONS !== 'undefined' ? CSS244_QUESTIONS : [] },
+            'CSS246': { title: 'CSS246', subtitle: 'Legal and Social Framework of Private Security Services in Nigeria', questions: typeof CSS246_QUESTIONS !== 'undefined' ? CSS246_QUESTIONS : [] },
+            'CIT104': { title: 'CIT104', subtitle: 'Introduction to Computers', questions: typeof CIT104_QUESTIONS !== 'undefined' ? CIT104_QUESTIONS : [] },
+            'GST202': { title: 'GST202', subtitle: 'Fundamentals of Peace Studies and Conflict Resolution', questions: typeof GST202_QUESTIONS !== 'undefined' ? GST202_QUESTIONS : [] },
+            'GST203': { title: 'GST203', subtitle: 'Introduction to Philosophy and Logic', questions: typeof GST203_QUESTIONS !== 'undefined' ? GST203_QUESTIONS : [] },
+            'GST204': { title: 'GST204', subtitle: 'Entrepreneurship and Innovation', questions: typeof GST204_QUESTIONS !== 'undefined' ? GST204_QUESTIONS : [] },
+            'JIL100': { title: 'JIL100', subtitle: 'Introduction to Nigerian Law', questions: typeof JIL100_QUESTIONS !== 'undefined' ? JIL100_QUESTIONS : [] }
+        };
+
+        this.init();
+    }
+
+    init() {
+        document.querySelectorAll('.f-card').forEach(card => {
+            card.addEventListener('click', () => this.selectCourse(card.dataset.course));
+        });
+        document.getElementById('f_registrationForm').addEventListener('submit', (e) => { e.preventDefault(); this.startExam(); });
+        document.getElementById('f_backToCourseBtn').addEventListener('click', () => this.showScreen('f_courseSelectionScreen'));
+        document.getElementById('f_prevBtn').addEventListener('click', () => this.previousQuestion());
+        document.getElementById('f_nextBtn').addEventListener('click', () => this.nextQuestion());
+        document.getElementById('f_submitBtn').addEventListener('click', () => this.confirmSubmit());
+        document.getElementById('f_retakeBtn').addEventListener('click', () => this.retakeExam());
+        document.getElementById('f_newCourseBtn').addEventListener('click', () => this.showScreen('f_courseSelectionScreen'));
+    }
+
+    selectCourse(courseCode) {
+        this.selectedCourse = courseCode;
+        const course = this.courseData[courseCode];
+        document.getElementById('f_courseTitle').textContent = course.title;
+        document.getElementById('f_courseSubtitle').textContent = course.subtitle;
+        this.showScreen('f_registrationScreen');
+    }
+
+    startExam() {
+        this.studentName = document.getElementById('f_studentName').value.trim();
+        this.matricNumber = document.getElementById('f_matricNumber').value.trim();
+        if (!this.studentName || !this.matricNumber) { alert('Please fill in all fields'); return; }
+
+        const courseQuestions = this.courseData[this.selectedCourse].questions;
+        if (!courseQuestions || courseQuestions.length === 0) {
+            alert(`Sorry! ${this.courseData[this.selectedCourse].title} questions are not available yet.`);
+            this.showScreen('f_courseSelectionScreen');
+            return;
+        }
+
+        const questionsToUse = Math.min(50, courseQuestions.length);
+        this.examQuestions = this.selectRandomQuestions(courseQuestions, questionsToUse);
+        this.userAnswers = new Array(questionsToUse).fill(null);
+        this.timeRemaining = 25 * 60;
+        this.startTime = new Date();
+
+        this.showScreen('f_examScreen');
+        document.getElementById('f_displayName').textContent = this.studentName;
+        document.getElementById('f_displayMatric').textContent = this.matricNumber;
+        this.startTimer();
+        this.displayQuestion();
+        this.createQuestionGrid();
+    }
+
+    selectRandomQuestions(questions, count) {
+        return [...questions].sort(() => Math.random() - 0.5).slice(0, count);
+    }
+
+    showScreen(screenId) {
+        document.querySelectorAll('#friendExamPortal .screen').forEach(s => s.classList.remove('active'));
+        document.getElementById(screenId).classList.add('active');
+        window.scrollTo(0, 0);
+    }
+
+    startTimer() {
+        clearInterval(this.timerInterval);
+        this.updateTimerDisplay();
+        this.timerInterval = setInterval(() => {
+            this.timeRemaining--;
+            this.updateTimerDisplay();
+            if (this.timeRemaining <= 0) { clearInterval(this.timerInterval); this.autoSubmit(); }
+        }, 1000);
+    }
+
+    updateTimerDisplay() {
+        const m = Math.floor(this.timeRemaining / 60);
+        const s = this.timeRemaining % 60;
+        const el = document.getElementById('f_timer');
+        el.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+        el.className = this.timeRemaining <= 60 ? 'timer danger' : this.timeRemaining <= 300 ? 'timer warning' : 'timer';
+    }
+
+    displayQuestion() {
+        const q = this.examQuestions[this.currentQuestionIndex];
+        document.getElementById('f_questionText').textContent = q.question;
+        document.getElementById('f_currentQuestion').textContent = this.currentQuestionIndex + 1;
+        document.getElementById('f_totalQuestions').textContent = this.examQuestions.length;
+
+        const container = document.getElementById('f_optionsContainer');
+        container.innerHTML = '';
+        q.options.forEach((option, index) => {
+            const div = document.createElement('div');
+            div.className = 'option';
+            div.textContent = option;
+            if (this.userAnswers[this.currentQuestionIndex] === index) div.classList.add('selected');
+            div.addEventListener('click', () => this.selectOption(index));
+            container.appendChild(div);
+        });
+
+        const pct = ((this.currentQuestionIndex + 1) / this.examQuestions.length) * 100;
+        document.getElementById('f_progressFill').style.width = pct + '%';
+        this.updateNavigationButtons();
+        this.updateQuestionGrid();
+    }
+
+    selectOption(index) {
+        this.userAnswers[this.currentQuestionIndex] = index;
+        document.querySelectorAll('#f_optionsContainer .option').forEach((o, i) => o.classList.toggle('selected', i === index));
+        this.updateQuestionGrid();
+    }
+
+    updateNavigationButtons() {
+        document.getElementById('f_prevBtn').style.display = this.currentQuestionIndex === 0 ? 'none' : 'inline-block';
+        const isLast = this.currentQuestionIndex === this.examQuestions.length - 1;
+        document.getElementById('f_nextBtn').style.display = isLast ? 'none' : 'inline-block';
+        document.getElementById('f_submitBtn').style.display = isLast ? 'inline-block' : 'none';
+    }
+
+    createQuestionGrid() {
+        const grid = document.getElementById('f_questionGrid');
+        grid.innerHTML = '';
+        this.examQuestions.forEach((_, i) => {
+            const div = document.createElement('div');
+            div.className = 'question-number';
+            div.textContent = i + 1;
+            if (this.userAnswers[i] !== null) div.classList.add('answered');
+            if (i === this.currentQuestionIndex) div.classList.add('current');
+            div.addEventListener('click', () => { this.currentQuestionIndex = i; this.displayQuestion(); });
+            grid.appendChild(div);
+        });
+    }
+
+    updateQuestionGrid() {
+        document.querySelectorAll('#f_questionGrid .question-number').forEach((n, i) => {
+            n.className = 'question-number';
+            if (this.userAnswers[i] !== null) n.classList.add('answered');
+            if (i === this.currentQuestionIndex) n.classList.add('current');
+        });
+    }
+
+    previousQuestion() { if (this.currentQuestionIndex > 0) { this.currentQuestionIndex--; this.displayQuestion(); } }
+    nextQuestion() { if (this.currentQuestionIndex < this.examQuestions.length - 1) { this.currentQuestionIndex++; this.displayQuestion(); } }
+
+    confirmSubmit() {
+        const unanswered = this.userAnswers.filter(a => a === null).length;
+        if (unanswered > 0 && !confirm(`You have ${unanswered} unanswered question(s). Submit anyway?`)) return;
+        this.submitExam();
+    }
+
+    autoSubmit() { alert('Time is up! Your exam will be submitted automatically.'); this.submitExam(); }
+
+    submitExam() {
+        clearInterval(this.timerInterval);
+        const timeTaken = Math.floor((new Date() - this.startTime) / 1000);
+        let correctCount = 0;
+        const topicPerformance = {};
+        const reviewData = [];
+
+        this.examQuestions.forEach((q, i) => {
+            const isCorrect = this.userAnswers[i] === q.correct;
+            if (isCorrect) correctCount++;
+            if (!topicPerformance[q.topic]) topicPerformance[q.topic] = { correct: 0, total: 0 };
+            topicPerformance[q.topic].total++;
+            if (isCorrect) topicPerformance[q.topic].correct++;
+            reviewData.push({
+                questionNumber: i + 1,
+                question: q.question,
+                userAnswer: this.userAnswers[i] !== null ? q.options[this.userAnswers[i]] : 'Not answered',
+                correctAnswer: q.options[q.correct],
+                isCorrect,
+                topic: q.topic,
+                explanation: q.explanation || 'No explanation available'
+            });
+        });
+
+        const percentage = Math.round((correctCount / this.examQuestions.length) * 100);
+        this.showScreen('f_resultsScreen');
+        document.getElementById('f_resultName').textContent = this.studentName;
+        document.getElementById('f_resultMatric').textContent = this.matricNumber;
+        document.getElementById('f_scorePercentage').textContent = percentage + '%';
+        document.getElementById('f_totalQuestionsResult').textContent = this.examQuestions.length;
+        document.getElementById('f_correctAnswers').textContent = correctCount;
+        document.getElementById('f_wrongAnswers').textContent = this.examQuestions.length - correctCount;
+        document.getElementById('f_grade').textContent = this.calculateGrade(percentage);
+        const m = Math.floor(timeTaken / 60), s = timeTaken % 60;
+        document.getElementById('f_timeTaken').textContent = `${m} min ${s} sec`;
+
+        // Topic breakdown
+        const tb = document.getElementById('f_topicBreakdown');
+        tb.innerHTML = '';
+        Object.keys(topicPerformance).sort().forEach(topic => {
+            const d = topicPerformance[topic];
+            const p = Math.round((d.correct / d.total) * 100);
+            tb.innerHTML += `<div class="topic-item"><span class="topic-name">${topic}</span><span class="topic-score">${d.correct}/${d.total} (${p}%)</span></div>`;
+        });
+
+        // Answer review with explanations
+        const ar = document.getElementById('f_answerReview');
+        ar.innerHTML = '';
+        reviewData.forEach(item => {
+            ar.innerHTML += `
+                <div class="review-item ${item.isCorrect ? 'correct' : 'wrong'}">
+                    <div class="review-question"><strong>Q${item.questionNumber}:</strong> ${item.question}</div>
+                    <div class="review-answer ${item.isCorrect ? '' : 'wrong-answer'}"><strong>Your Answer:</strong> ${item.userAnswer}</div>
+                    ${!item.isCorrect ? `<div class="review-answer correct-answer"><strong>Correct Answer:</strong> ${item.correctAnswer}</div>` : ''}
+                    <div class="explanation"><strong>Explanation:</strong> ${item.explanation}</div>
+                    <div style="font-size:0.85rem;color:#858591;margin-top:5px;"><strong>Topic:</strong> ${item.topic}</div>
+                </div>`;
+        });
+    }
+
+    calculateGrade(p) {
+        if (p >= 90) return 'A+'; if (p >= 85) return 'A'; if (p >= 80) return 'A-';
+        if (p >= 75) return 'B+'; if (p >= 70) return 'B'; if (p >= 65) return 'B-';
+        if (p >= 60) return 'C+'; if (p >= 55) return 'C'; if (p >= 50) return 'C-';
+        if (p >= 45) return 'D+'; if (p >= 40) return 'D'; return 'F';
+    }
+
+    retakeExam() {
+        if (confirm('Start a new exam with different questions?')) {
+            this.currentQuestionIndex = 0;
+            this.userAnswers = [];
+            this.timeRemaining = 25 * 60;
+            this.examQuestions = [];
+            document.getElementById('f_registrationForm').reset();
+            this.showScreen('f_registrationScreen');
+        }
+    }
+}
