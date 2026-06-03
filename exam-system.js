@@ -55,6 +55,18 @@ class ExamSystem {
                 title: 'MAT201 Exam',
                 subtitle: 'Mathematics - Test Yourself',
                 questions: typeof MAT201_QUESTIONS !== 'undefined' ? MAT201_QUESTIONS : []
+            },
+            'COS202': {
+                title: 'COS202',
+                subtitle: 'Object Oriented Programming',
+                questions: typeof COS202_QUESTIONS !== 'undefined' ? COS202_QUESTIONS : [],
+                explanations: typeof COS202_EXPLANATIONS !== 'undefined' ? COS202_EXPLANATIONS : {}
+            },
+            'GST212': {
+                title: 'GST212',
+                subtitle: 'Philosophy, Logic & Human Existence',
+                questions: typeof GST212_QUESTIONS !== 'undefined' ? GST212_QUESTIONS : [],
+                explanations: typeof GST212_EXPLANATIONS !== 'undefined' ? GST212_EXPLANATIONS : {}
             }
         };
         
