@@ -67,6 +67,24 @@ class ExamSystem {
                 subtitle: 'Philosophy, Logic & Human Existence',
                 questions: typeof GST212_QUESTIONS !== 'undefined' ? GST212_QUESTIONS : [],
                 explanations: typeof GST212_EXPLANATIONS !== 'undefined' ? GST212_EXPLANATIONS : {}
+            },
+            'DTS204': {
+                title: 'DTS204',
+                subtitle: 'Statistical Computing II',
+                questions: typeof DTS204_QUESTIONS !== 'undefined' ? DTS204_QUESTIONS : [],
+                explanations: typeof DTS204_EXPLANATIONS !== 'undefined' ? DTS204_EXPLANATIONS : {}
+            },
+            'IFT212': {
+                title: 'IFT212',
+                subtitle: 'Computer Architecture & Organisation',
+                questions: typeof IFT212_QUESTIONS !== 'undefined' ? IFT212_QUESTIONS : [],
+                explanations: typeof IFT212_EXPLANATIONS !== 'undefined' ? IFT212_EXPLANATIONS : {}
+            },
+            'CSC264': {
+                title: 'CSC264',
+                subtitle: 'Computer Hardware System & Maintenance',
+                questions: typeof CSC264_QUESTIONS !== 'undefined' ? CSC264_QUESTIONS : [],
+                explanations: typeof CSC264_EXPLANATIONS !== 'undefined' ? CSC264_EXPLANATIONS : {}
             }
         };
         
