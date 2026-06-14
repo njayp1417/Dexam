@@ -85,6 +85,18 @@ class ExamSystem {
                 subtitle: 'Computer Hardware System & Maintenance',
                 questions: typeof CSC264_QUESTIONS !== 'undefined' ? CSC264_QUESTIONS : [],
                 explanations: typeof CSC264_EXPLANATIONS !== 'undefined' ? CSC264_EXPLANATIONS : {}
+            },
+            'INS202': {
+                title: 'INS202',
+                subtitle: 'Human Computer Interaction',
+                questions: typeof INS202_QUESTIONS !== 'undefined' ? INS202_QUESTIONS : [],
+                explanations: typeof INS202_EXPLANATIONS !== 'undefined' ? INS202_EXPLANATIONS : {}
+            },
+            'GNS201': {
+                title: 'GNS201',
+                subtitle: 'Nigerian People and Culture',
+                questions: typeof GNS201_QUESTIONS !== 'undefined' ? GNS201_QUESTIONS : [],
+                explanations: typeof GNS201_EXPLANATIONS !== 'undefined' ? GNS201_EXPLANATIONS : {}
             }
         };
         
