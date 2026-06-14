@@ -327,7 +327,7 @@ const GNS201_QUESTIONS = [
         ],
         correct: 1,
         topic: "Colonial History"
-    }
+    },
 
     // ── MODULE 10: CONSTITUTIONAL EVOLUTION & COLONIAL DEVELOPMENT ────────────
 
@@ -660,7 +660,7 @@ const GNS201_QUESTIONS = [
         ],
         correct: 0,
         topic: "Pre-Colonial Political Systems"
-    }
+    },
 
     // ── MODULE 21: THE NIGER-DELTA CITY-STATES & PALM OIL DYNAMICS ────────────
 
@@ -990,7 +990,7 @@ const GNS201_QUESTIONS = [
         ],
         correct: 1,
         topic: "Colonial History"
-    }
+    },
 
     // ── MODULE 31: RELIGION AND JURISPRUDENCE IN CONTEMPORARY NIGERIA ─────────
 
