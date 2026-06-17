@@ -14,12 +14,14 @@ class ExamSystem {
             'DTS201': {
                 title: 'DTS201',
                 subtitle: 'Introduction to Data Science',
-                questions: typeof DTS201_QUESTIONS !== 'undefined' ? DTS201_QUESTIONS : []
+                questions: typeof DTS201_QUESTIONS !== 'undefined' ? DTS201_QUESTIONS : [],
+                explanations: {}
             },
             'COS201': {
                 title: 'COS201',
                 subtitle: 'Computer Programming I',
-                questions: typeof COS201_QUESTIONS !== 'undefined' ? COS201_QUESTIONS : []
+                questions: typeof COS201_QUESTIONS !== 'undefined' ? COS201_QUESTIONS : [],
+                explanations: {}
             },
             'CYB201': {
                 title: 'CYB201',
@@ -254,6 +256,7 @@ class ExamSystem {
         const questionsToUse = Math.min(50, courseQuestions.length);
         this.examQuestions = this.selectRandomQuestions(courseQuestions, questionsToUse);
         this.userAnswers = new Array(questionsToUse).fill(null);
+        this.timeRemaining = 25 * 60;
         this.startTime = new Date();
         
         this.showScreen('examScreen');
@@ -481,6 +484,8 @@ class ExamSystem {
         const topicPerformance = {};
         const reviewData = [];
         
+        const allCourseQuestions = this.courseData[this.selectedCourse].questions;
+
         this.examQuestions.forEach((question, index) => {
             const userAnswer = this.userAnswers[index];
             const isCorrect = userAnswer === question.correct;
@@ -492,9 +497,12 @@ class ExamSystem {
             }
             topicPerformance[question.topic].total++;
             if (isCorrect) topicPerformance[question.topic].correct++;
+
+            const originalIndex = allCourseQuestions.indexOf(question);
             
             reviewData.push({
                 id: question.id,
+                originalIndex,
                 questionNumber: index + 1,
                 question: question.question,
                 userAnswer: userAnswer !== null ? question.options[userAnswer] : 'Not answered',
@@ -583,7 +591,14 @@ class ExamSystem {
             const reviewDiv = document.createElement('div');
             reviewDiv.className = `review-item ${item.isCorrect ? 'correct' : 'wrong'}`;
             
-            let explanation = explanations[item.id] || item.explanation || 'No explanation available';
+            // Look up by string id, then by position-based key, then by numeric index, then inline
+            const posKeys = Object.keys(explanations);
+            const posKey = posKeys[item.originalIndex];
+            let explanation = (item.id && explanations[item.id])
+                || (posKey && explanations[posKey])
+                || explanations[item.originalIndex]
+                || item.explanation
+                || 'No explanation available';
             
             reviewDiv.innerHTML = `
                 <div class="review-question">
