@@ -1,6 +1,6 @@
 // INS202 - Human-Computer Interaction Explanations Database
 
-const INS202_EXPLANATIONS = {
+const ISN202_EXPLANATIONS = {
     "isn202_001": "According to the INS202 course material, the fundamental goals of HCI studies are to produce systems that are usable, safe, and fully functional, ensuring interactive computing systems are optimized for human use.",
     "isn202_002": "The text outlines three views of interaction techniques. The Computing Perspective deals directly with the computational mechanics, input device behaviors, and processing aspects of the interface.",
     "isn202_003": "The Conceptual View of an interaction technique focuses heavily on the user's cognitive model, mapping out how the user understands, thinks about, and conceptualizes the system interaction.",
@@ -104,5 +104,5 @@ const INS202_EXPLANATIONS = {
 };
 
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = INS202_EXPLANATIONS;
+    module.exports = ISN202_EXPLANATIONS;
 }

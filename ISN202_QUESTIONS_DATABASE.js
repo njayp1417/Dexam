@@ -1,6 +1,6 @@
 // INS202 - Human-Computer Interaction Questions Database
 
-const INS202_QUESTIONS = [
+const ISN202_QUESTIONS = [
 
     // ── MODULE 1: HISTORY, GOALS, AND INTERACTION TECHNIQUES ─────────────────
 
@@ -1316,5 +1316,5 @@ const INS202_QUESTIONS = [
 ];
 
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = INS202_QUESTIONS;
+    module.exports = ISN202_QUESTIONS;
 }

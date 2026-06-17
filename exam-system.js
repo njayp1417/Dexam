@@ -86,11 +86,11 @@ class ExamSystem {
                 questions: typeof CSC264_QUESTIONS !== 'undefined' ? CSC264_QUESTIONS : [],
                 explanations: typeof CSC264_EXPLANATIONS !== 'undefined' ? CSC264_EXPLANATIONS : {}
             },
-            'INS202': {
+            'ISN202': {
                 title: 'INS202',
-                subtitle: 'Human Computer Interaction',
-                questions: typeof INS202_QUESTIONS !== 'undefined' ? INS202_QUESTIONS : [],
-                explanations: typeof INS202_EXPLANATIONS !== 'undefined' ? INS202_EXPLANATIONS : {}
+                subtitle: 'Human-Computer Interaction',
+                questions: typeof ISN202_QUESTIONS !== 'undefined' ? ISN202_QUESTIONS : [],
+                explanations: typeof ISN202_EXPLANATIONS !== 'undefined' ? ISN202_EXPLANATIONS : {}
             },
             'GNS201': {
                 title: 'GNS201',
@@ -494,13 +494,14 @@ class ExamSystem {
             if (isCorrect) topicPerformance[question.topic].correct++;
             
             reviewData.push({
+                id: question.id,
                 questionNumber: index + 1,
                 question: question.question,
                 userAnswer: userAnswer !== null ? question.options[userAnswer] : 'Not answered',
                 correctAnswer: question.options[question.correct],
                 isCorrect: isCorrect,
                 topic: question.topic,
-                explanation: question.explanation || 'No explanation available'
+                explanation: question.explanation || null
             });
         });
         
@@ -582,13 +583,7 @@ class ExamSystem {
             const reviewDiv = document.createElement('div');
             reviewDiv.className = `review-item ${item.isCorrect ? 'correct' : 'wrong'}`;
             
-            // Get explanation from separate file if available, otherwise use embedded explanation
-            const question = this.examQuestions.find(q => q.question === item.question);
-            let explanation = item.explanation;
-            
-            if (question && question.id && explanations[question.id]) {
-                explanation = explanations[question.id];
-            }
+            let explanation = explanations[item.id] || item.explanation || 'No explanation available';
             
             reviewDiv.innerHTML = `
                 <div class="review-question">
@@ -597,11 +592,9 @@ class ExamSystem {
                 <div class="review-answer ${item.isCorrect ? '' : 'wrong-answer'}">
                     <strong>Your Answer:</strong> ${item.userAnswer}
                 </div>
-                ${!item.isCorrect ? `
-                    <div class="review-answer correct-answer">
-                        <strong>Correct Answer:</strong> ${item.correctAnswer}
-                    </div>
-                ` : ''}
+                <div class="review-answer correct-answer">
+                    <strong>Correct Answer:</strong> ${item.correctAnswer}
+                </div>
                 <div class="explanation">
                     <strong>Explanation:</strong> ${explanation}
                 </div>
@@ -903,7 +896,7 @@ class FriendExamSystem {
                 <div class="review-item ${item.isCorrect ? 'correct' : 'wrong'}">
                     <div class="review-question"><strong>Q${item.questionNumber}:</strong> ${item.question}</div>
                     <div class="review-answer ${item.isCorrect ? '' : 'wrong-answer'}"><strong>Your Answer:</strong> ${item.userAnswer}</div>
-                    ${!item.isCorrect ? `<div class="review-answer correct-answer"><strong>Correct Answer:</strong> ${item.correctAnswer}</div>` : ''}
+                    <div class="review-answer correct-answer"><strong>Correct Answer:</strong> ${item.correctAnswer}</div>
                     <div class="explanation"><strong>Explanation:</strong> ${item.explanation}</div>
                     <div style="font-size:0.85rem;color:#858591;margin-top:5px;"><strong>Topic:</strong> ${item.topic}</div>
                 </div>`;
